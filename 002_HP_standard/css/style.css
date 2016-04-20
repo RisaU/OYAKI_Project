@@ -1,49 +1,87 @@
 @charaset "utf-8";
 
+html {
+    height: 100%;
+}
+body {
+    margin: 0 auto;
+    height: 100%;
+    font-family: Verdana, Arial;
+    font-size: 14px;
+}
+body > #container {
+    height: 100%;
+}
 #container {
+    min-height: 100%;
+    height: 100%;
     width: 800px;
     margin: 0 auto;
+    padding: 0 10px;
 }
-/* 開発しやすいよう色分け */
+/* for_dev */
 #container { background: #ccc; }
 #header { background: #cccfff; }
 #gnav { background: #ffe4b5; }
-main { background: #e6e6fa; }
+/* main { background: #e6e6fa; } */
 #sideber { background: #eee8aa; }
 #footer { background: #ffcccc; }
-
 
 main {
     width: 550px;
     float: left;
+    margin-bottom: 15px;
+}
+/* 各コンテンツ */
+section {
+    width: 540px;
+    margin: 5px;
+    border: 1px solid #000;// for_dev
+}
+/* header of main contents */
+.cHeader {
+    width: 520px;
+    margin: 5px;
+    background-color: #ffff66;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 3px 0 3px 10px;
+    border-radius: 2px;
 }
 #sideber {
     width: 230px;
     float: right;
 }
-#footer {
-    clear: both;
-}
-/* global navigation */
-#gnav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 #gnav li {
     float: left;
     width: 140px;
-    background: #8c765a;
-    margin: 0 0.5em 0 0;
+    background: #ffcc33;
+    margin: 0 0.2em 0 0;
+    border-radius: 8px;
     text-align: center;
     border: 2px solid #65543e;
 }
 #gnav li a {
     display: block;
-    color: #fff;
+    color: #660000;
     text-decoration: none;
     line-height: 2em;
 }
-#gnav li a:hover {
-    background: #a21212;
+/* shaking if mouse over */
+#gnav li:hover {
+    animation: rumble 0.12s linear infinite;
+}
+@keyframes rumble {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    12.5% { transform: rotate(0.4deg) translate(1px, -1px); }
+    25% { transform: rotate(0.8deg) translate(0, 1px); }
+    37.5% { transform: rotate(0.4deg) translate(-1px, 0); }
+    50% { transform: rotate(0deg) translate(0, 0); }
+    62.5% { transform: rotate(-0.4deg) translate(1px, 0); }
+    75% { transform: rotate(-0.8deg) translate(0, 1px); }
+    87.5% { transform: rotate(-0.4deg) translate(-1px, -1px); }
+    100% { transform: rotate(0deg) translate(0, 0); }
+}
+#footer {
+    clear: both;
 }
