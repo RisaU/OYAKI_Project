@@ -20,7 +20,7 @@ body > #container {
     padding: 0 10px;
 }
 /* for_dev */
-#container { background: #ccc; }
+#container { background: #fff; }
 #header { background: #cccfff; }
 #gnav { background: #ffe4b5; }
 /* main { background: #e6e6fa; } */
@@ -37,16 +37,6 @@ section {
     width: 540px;
     margin: 5px;
     border: 1px solid #000;// for_dev
-}
-/* header of main contents */
-.cHeader {
-    width: 520px;
-    margin: 5px;
-    background-color: #ffff66;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 3px 0 3px 10px;
-    border-radius: 2px;
 }
 #sideber {
     width: 230px;
@@ -69,4 +59,42 @@ section {
 }
 #footer {
     clear: both;
+}
+/* header of main contents */
+/* リボン的な */
+.cHeader {
+    width: 450px;
+    position: relative;
+    color: #111;
+    background: #ffff66;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 10px 20px 10px -10px;
+    padding: 14px 5px 10px 50px;
+    border-radius: 22px 0 0 22px;
+}
+/* 丸印 */
+.cHeader:before {
+    content: "";
+    position: absolute;
+    background: #ffffba;
+    top: 50%;
+    left: 14px;
+    margin-top: -10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #777 inset;
+}
+/* リボン部分 */
+.cHeader:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -22px;
+    height: 0;
+    width: 0;
+    border: 21px solid #ffff66;
+    border-right-color: transparent;
 }
