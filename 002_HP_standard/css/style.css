@@ -42,6 +42,11 @@ section {
     width: 230px;
     float: right;
 }
+/* サイドバー */
+.sideSection {
+    width: 210px;
+    margin: 10px;
+}
 #gnav li {
     float: left;
     width: 120px;
