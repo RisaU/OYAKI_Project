@@ -15,6 +15,7 @@
 <meta name = "ROBOTS" content = "NOINDEX,NOFOLLOW">
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/rumble.css">
 <!-- [if lt IE9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -37,15 +38,27 @@
             <li><a href="">メニュー</a></li>
             <li><a href="">店舗情報</a></li>
             <li><a href="">ブログ</a></li>
+            <li><a href="">ギャラリー</a></li>
         </ul>
     </nav>
     <main>
         <section id="recommend">
             <h2 class="cHeader">今月のおすすめ</h2>
-            <ul id="recommendList">
-                <li>野沢菜</li>
-                <li>賀茂ナス</li>
-                <li>あんこ</li>
+            <ul id="recommendList" class="clearFix">
+<!--
+                <li><dl>
+                    <dt><img src="./images/oyaki_1.jpg" alt="野沢菜"></dt>
+                    <dd>野沢菜</dd>
+                </dl></li>
+-->
+                <li><dl>
+                    <dt class="picFrame"><img src="./images/oyaki_3.jpg" alt="野沢菜"></dt>
+                    <dd>賀茂ナス  100円</dd>
+                </dl></li>
+                <li><dl>
+                    <dt class="picFrame"><img src="./images/oyaki_2.jpg" alt="野沢菜"></dt>
+                    <dd>あんこ  100円</dd>
+                </dl></li>
             </ul>
         </section><!-- recommend -->
         <section id="information">

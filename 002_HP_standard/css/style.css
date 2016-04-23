@@ -22,8 +22,8 @@ body > #container {
 /* for_dev */
 #container { background: #fff; }
 #header { background: #cccfff; }
-#gnav { background: #ffe4b5; }
-/* main { background: #e6e6fa; } */
+/* #gnav { background: #ffe4b5; } */
+/* main { background: #F3D8CB; } */
 #sideber { background: #eee8aa; }
 #footer { background: #ffcccc; }
 
@@ -44,7 +44,7 @@ section {
 }
 #gnav li {
     float: left;
-    width: 140px;
+    width: 120px;
     background: #ffcc33;
     margin: 0 0.2em 0 0;
     border-radius: 8px;
@@ -97,4 +97,67 @@ section {
     width: 0;
     border: 21px solid #ffff66;
     border-right-color: transparent;
+}
+/* 今月のおすすめ */
+#recommendList {
+    width: 100%;
+    /* min-width: 660px; */
+    margin: 0;
+    padding: 10px 0 10px;
+    /* list-style-type: none; */
+}
+#recommendList li {
+    width: 50%;
+    float: left;
+}
+#recommendList dl {
+    margin: 0 0 0 10px;
+    font-size: 90%;
+}
+/* 写真エリア */
+#recommendList dt img {
+    height: 170px;
+    width: 230px;
+}
+/*  キャプションエリア */
+#recommendList dd {
+    width: 230px; /* 写真のwidthに合わせる */
+    text-align: center; /* 写真の中央に表示 */
+    margin: 0 0 3px;/* 上 左右 下 */
+}
+/* 写真の加工・差込み風 */
+.picFrame {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* 不要部分を消す */
+    padding: 6px; /* 6pxだけは写真からはみ出す */
+}
+.picFrame img {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.picFrame:before,
+.picFrame:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 97px;
+    height: 50px;
+    background: #fff; /* ※ 背景色に合わせて変更 */
+    transform: rotate(-30deg);
+}
+/* 左上 */
+.picFrame:before {
+    box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+    top: -30px;
+    bottom: auto;
+    right: auto;
+    left: -26px;
+}
+/* 右下 */
+.picFrame:after {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.7);
+    top: auto;
+    bottom: -28px;
+    right: -25px;
+    left: auto;
 }

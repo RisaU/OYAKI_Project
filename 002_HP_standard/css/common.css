@@ -1,0 +1,13 @@
+@charaset "utf-8";
+
+/* float使用後に親要素に高さを持たせるおまじない */
+.clearFix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.clearFix {
+    min-height: 1px;
+}
