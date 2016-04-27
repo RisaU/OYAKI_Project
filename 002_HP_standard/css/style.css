@@ -27,6 +27,45 @@ body > #container {
 #sideber { background: #eee8aa; }
 #footer { background: #ffcccc; }
 
+/* ヘッダー -カルーセル- */
+#hGallery {
+    margin-bottom: 10px;
+}
+.gallery {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.galleryRoad {
+    position: absolute;
+    height: auto;
+}
+.gallery li {
+    width: 800px;
+    height: 300px;
+    float: left;
+    position: relative;
+}
+.gallery li img {
+    width: 100%;
+    height: auto;
+}
+.gNext {
+    margin-top: -16px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+.gPrev {
+    margin-top: -16px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+/* メインコンテンツ */
 main {
     width: 550px;
     float: left;

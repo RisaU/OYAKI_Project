@@ -23,13 +23,27 @@
 <script src="./../../libs/jquery/jquery-1.10.2.min.js"></script><!-- jQuery本体 -->
 <!-- <script src="./../../libs/jquery/jquery.easing.1.3.js"></script> --><!-- animation behavior -->
 <script src="./js/function.js"></script>
+<script src="./js/slideGallery.js"></script>
 <script>
 </script>
 </head>
 <body>
 <div id="container">
     <div id="header">
-        <h1><img src="./images/header.png" height="100" width="600"></h1>
+        <div id="hGallery" class="gallery">
+            <ul class="galleryRoad">
+                <li><a href="#"><img src="./images/header_oyaki_01.jpg"></a></li>
+                <li><a href="#"><img src="./images/header_oyaki_02.jpg"></a></li>
+                <li><a href="#"><img src="./images/header_oyaki_03.jpg"></a></li>
+                <li><a href="#"><img src="./images/header_oyaki_04.jpg"></a></li>
+                <li><a href="#"><img src="./images/header_oyaki_05.jpg"></a></li>
+                <li><a href="#"><img src="./images/header_oyaki_06.jpg"></a></li>
+            </ul>
+            <p class="gPrev"><img src="./images/header_yaji_L.png" alt="prev"
+                width="64" height="64" class="rollover"></p>
+            <p class="gNext"><img src="./images/header_yaji_R.png" alt="next"
+                width="64" height="64" class="rollover"></p>
+        </div><!-- gallery -->
     </div><!-- header -->
     <nav id="gnav">
         <ul>
