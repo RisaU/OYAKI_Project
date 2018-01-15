@@ -35,8 +35,16 @@
     position: relative;
 }
 #hContent {
+    width: 60vw;
     position: absolute;
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
     z-index: 10;
-    color: rgba(102, 102, 102, 0.7);
+}
+#hContent nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+#hContent #logo {
+    display: block;
+    margin: auto;
 }

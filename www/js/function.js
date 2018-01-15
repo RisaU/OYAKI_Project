@@ -32,7 +32,7 @@ $(window).on('load',function(){
             slide.find(".item").eq(j).fadeOut(4500);
         };
     // ここの値を変更すると、処理の間隔を変えれる
-    }, 4500);
+    }, 6000);
 
 
 
