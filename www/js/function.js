@@ -16,24 +16,20 @@ $(window).on('load',function(){
                 j = i;
                 i++;
                 setTimeout(function() {
-                    slide.find(".item").eq(i).fadeIn(3500)
+                    slide.find(".item").eq(i).fadeIn(5500)
                     .addClass("in").removeClass("out");
                 }, 1000);
-            slide.find(".item").eq(j).fadeOut(4500);
+            slide.find(".item").eq(j).fadeOut(6500);
         } else if(i == total) {
             slide.find(".item").eq(i).addClass("out");
             slide.find(".item").eq(i).removeClass("in");
             j = i;
             i = 0;
             setTimeout(function() {
-                slide.find(".item").eq(i).fadeIn(3500)
+                slide.find(".item").eq(i).fadeIn(5500)
                     .addClass("in").removeClass("out");
             }, 1000);
-            slide.find(".item").eq(j).fadeOut(4500);
+            slide.find(".item").eq(j).fadeOut(6500);
         };
-    // ここの値を変更すると、処理の間隔を変えれる
-    }, 6000);
-
-
-
+    }, 6500);
 });
