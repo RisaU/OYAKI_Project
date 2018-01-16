@@ -5,6 +5,24 @@
     border: none;
 }
 /**
+ * 基本設定
+*/
+body {
+    font-family: "trebuchet MS", calibri, arial, sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: black;
+}
+.Chewy {
+     font-family: 'Chewy', cursive;
+}
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+/**
  * ヘッダー
 */
 .slideshow {
