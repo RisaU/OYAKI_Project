@@ -22,6 +22,7 @@
 <![endif]-->
 <script src="./js/jquery-3.2.1.min.js"></script><!-- jQuery本体 -->
 <script src="./js/function.js"></script>
+<script src="./js/fadeUp.js"></script>
 <script>
 </script>
 </head>
@@ -55,16 +56,20 @@
 
 </header>
 <main>
-<section class="callToAction">
-	<figure class="contentButton">
-		<img src="./images/sample_callToAction_1.jpg" alt="">
-		<figcaption class="caption">
-			<a href="#">
+<div class="callToAction fade-up">
+	<section class="ship">
+		<a href="#">
 			<p>We can ship anyehere all over the world</p>
 			<p class="border">More detail</p>
-			</a>		
-		</figcaption>
-	</figure>
+		</a>
+	</section>
+	<section class="shopArea">
+		<a href="#">
+			<p>Where can I get an OYAKI?</p>
+			<p class="border">More detail</p>
+		</a>
+	</section>
+<!-- 
 	<figure class="contentButton">
 		<img src="./images/sample_callToAction_2.jpg" alt="">
 		<figcaption class="caption">
@@ -74,7 +79,8 @@
 			</a>
 		</figcaption>
 	</figure>
-</section><!-- cButton -->
+-->
+</div><!-- callToAction -->
 <p>Hello World</p>
 </main>
 </body>
