@@ -17,17 +17,21 @@ h2 {
 	font-size: 25px;
 	padding: 5px 0;
 }
-.Chewy {
-     font-family: 'Chewy', cursive;
-}
 a {
-    color: white;
+    color: #795548;
     text-decoration: none;
-    font-size: 200%;
     opacity: 1;
 }
 a:hover {
     opacity: 0.7;
+}
+/* Web font "Chewy" */
+.Chewy { 
+    font-family: 'Chewy', cursive;
+}
+.Chewy a {
+	color: white; 	
+    font-size: 200%;
 }
 /* スローガン */
 #slogan {
@@ -135,7 +139,7 @@ a:hover {
 }
 .btnMore {
 	color: #795548;
-	border: solid 2px;
+	border: solid 2px #795548;
 	border-radius: 10px;
 	padding: 0.2em 0.4em;
 	width: 50%;
@@ -153,13 +157,22 @@ a:hover {
 	text-align: center;
 	padding: 0.4em 0.8em;
 	background-color: #795548;
-	color: white;
-	
+	color: white;	
 }
 #about .btnMore:hover {
 	background-color: white;
 	color: #795548;	
 	opacity: 1;
+}
+/* 新着情報 What's new */
+#newInfo {
+	text-align: center;
+}
+#newInfo #infoContents {
+	border: 1px solid red;
+	display: flex;
+	justify-content: space-between;
+	
 }
 /**
 * function 
