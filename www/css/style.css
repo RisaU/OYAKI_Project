@@ -91,7 +91,7 @@ a:hover {
 .mainContents {
 	width: 90%;
 	height: auto;
-	border: 1px solid red;/* for debug */
+	/* border: 1px solid red; for debug */
 	padding: 2% 5%;
 }
 .mainContents p {
@@ -145,7 +145,7 @@ a:hover {
 
 /* about */
 #about {
-
+	background: url("../images/bg_about.jpg") repeat-x left top;
 }
 #about .btnMore {
 	display: inline-block;
