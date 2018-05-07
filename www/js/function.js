@@ -39,7 +39,7 @@ how to use: put the class od 'fadein'
 */
 $(window).scroll(function() {
 	$('.fadein').each(function() {
-		var elemPos = $(this).offset().top;
+		var elemPos = $(this).offset().top;// element posiiton
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
 		if (scroll > elemPos - windowHeight + 100) {

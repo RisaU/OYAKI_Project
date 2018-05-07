@@ -15,6 +15,7 @@ body {
 }
 h2 {
 	font-size: 25px;
+	padding: 5px 0;
 }
 .Chewy {
      font-family: 'Chewy', cursive;
@@ -88,8 +89,17 @@ a:hover {
 * main content
 */
 .mainContents {
-	font-size: 100%;
+	width: 100%;
+	height: auto;
+	border: 1px solid red;
+	padding: 2% 5%;
 }
+.mainContents p {
+	font-size: 120%;
+	line-height: 150%;
+}
+
+/* call to action */
 .callToAction {
     margin: 10px 0;
 	display: flex;
@@ -123,7 +133,7 @@ a:hover {
     text-align: center;
     line-height: 0.9em;
 }
-.buttonMore {
+.btnMore {
 	color: #795548;
 	border: solid 2px;
 	border-radius: 10px;
@@ -131,11 +141,26 @@ a:hover {
 	width: 50%;
 	margin: auto;
 }
+
 /* about */
 #about {
-	border: 1px solid red;
-}
 
+}
+#about .btnMore {
+	display: inline-block;
+	width: 20%;
+	margin-top: 10px;
+	text-align: center;
+	padding: 0.4em 0.8em;
+	background-color: #795548;
+	color: white;
+	
+}
+#about .btnMore:hover {
+	background-color: white;
+	color: #795548;	
+	opacity: 1;
+}
 /**
 * function 
 */
@@ -143,20 +168,12 @@ a:hover {
 .fadein {
 	opacity: 0.1;
 	transform: translate(0, 50px);
-	transition: all 1000ms;
+	transition: all 2000ms;
 }
 .scrollin {
 	opacity: 1;
 	transform: translate(0, 0);
 }
-
-
-
-
-
-
-
-
 
 
 
