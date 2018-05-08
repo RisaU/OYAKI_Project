@@ -14,7 +14,7 @@ body {
     color: black;
 }
 h2 {
-	font-size: 25px;
+	font-size: 35px;
 	padding: 5px 0;
 }
 a {
@@ -132,7 +132,7 @@ a:hover {
 }
 .callToAction a p {
     padding: 0.4em 0.8em;
-    font-size: 110%;
+    font-size: 200%;
     color: #795548;
     text-align: center;
     line-height: 0.9em;
@@ -166,13 +166,18 @@ a:hover {
 }
 /* 新着情報 What's new */
 #newInfo {
-	text-align: center;
+	/* text-align: center; */
 }
 #newInfo #infoContents {
 	border: 1px solid red;
 	display: flex;
 	justify-content: space-between;
 	
+}
+#newInfo #infoContents div {
+	width: 25%;
+	margin: 2%;
+	padding: 1% 2%;
 }
 /**
 * function 
@@ -188,7 +193,17 @@ a:hover {
 	transform: translate(0, 0);
 }
 
-
+/* freehand border line */
+.b-2 {
+	border: 1px solid black;
+	border-width: 3px!important;
+	border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;	
+}
+.b-3 {
+	border: 1px solid black;
+	border-width: 3px!important;
+	border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+}
 
 
 
