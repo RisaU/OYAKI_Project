@@ -1,0 +1,69 @@
+/**
+* ref: http://www.webdesignleaves.com/wp/jquery/613/
+* sample3
+*/
+#slider_wrap {
+	margin: 20px auto;
+	width: 1300px;
+	height: 340px;
+	padding: 20px;
+	/* background:#efefef;*/
+	position: relative;
+	border: 1px solid #ccc;
+}
+#slider_prev {
+	position: absolute;
+	top: 170px;
+	left: -10px;
+	cursor: pointer;
+}
+#slider_next {
+	position: absolute;
+	top: 170px;
+	right: -10px;
+	cursor: pointer;
+}
+#slider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#photo_list {
+	height: 300px;
+	padding: 20px 10px;
+	list-style-type: none;
+	float: left;
+	/* background: #999; */
+}
+#photo_list li {
+	float: left;
+	margin: 0 10px;
+	display: inline;
+}
+#photo_list img {
+	border: none;
+	border-radius: 50%;
+}
+#stop {
+	cursor: pointer;
+	background: #666;
+	color: #fff;
+	border: 1px solid #999;
+	width: 50px;
+	height: 2em;
+	text-align: center;
+	line-height: 2em;
+	margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
