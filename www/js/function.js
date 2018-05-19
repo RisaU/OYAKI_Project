@@ -5,7 +5,7 @@ $(window).on('load',function(){
 * http://yurixxx8.hatenablog.com/entry/2017/02/05/022049
 * プラグインなしで拡大しながらフェードで切り替わるスライド
 */
-
+	var slideFlag = 0;
     var slide = $(".slideshow");
     var i = 0;
     // 1枚目のスライド表示
@@ -13,6 +13,7 @@ $(window).on('load',function(){
     // スライドの枚数
     var total = $(".slideshow .item").length -1;
 
+if (slideFlag == 1) {
     // 処理を繰り返す
     setInterval(function() {
         if(i < total) {
@@ -40,6 +41,7 @@ $(window).on('load',function(){
         };
 	// この値を変更すると、処理の間隔を遅くしたり早くしたりできる
     }, 7000);
+}
 });
 /*  
 http://imasashi.net/element-fadein.html
