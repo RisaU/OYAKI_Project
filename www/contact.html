@@ -19,7 +19,7 @@
 <!-- css -->
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/slider.css">
+<link rel="stylesheet" href="./css/contact.css">
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Permanent+Marker" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -29,7 +29,7 @@
 <!-- js -->
 <script src="./js/jquery-3.2.1.min.js"></script><!-- jQuery本体 -->
 <script src="./js/function.js"></script>
-<script src="./js/slider.js"></script>
+<script src="./js/contact.js"></script>
 
 <script>
 </script>
@@ -45,7 +45,7 @@
                     <li><a href="index.html" id="current-page">HOME</a></li>
                     <li><a href="#">ABOUT</a></li>
                     <li><a href="#">MENU</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
                     <li><a href="#">BLOG</a></li>
                     <li>
                         <a href="http://facebook.com/" target="_blank"><img src="images/icon_Facebook.png" width="25" height="25" alt="Facebook"></a>
@@ -64,27 +64,70 @@
 
 </header>
 <main>
-<section>
-	<div id="slider_wrap">
-		<p id="slider_prev"><img src="images/nav_prev.png" 
-			height="30" width="20" alt="previous"></p>
-		<p id="slider_next"><img src="images/nav_next.png" 
-			height="30" width="20" alt="next"></p>
+<section class="mainContents" id="contact">
+	<h2>Contact</h2>
+	<p>Gingerbread gummi bears liquorice candy wafer pie. Caramels tiramisu toffee. Lollipop marzipan chocolate bar tootsie roll gingerbread. Jujubes carrot cake jelly beans powder jelly-o.</p>
+	<p>Cheesecake oat cake marzipan cheesecake ice cream jelly beans chocolate bar chupa chups. Cotton candy chocolate bar fruitcake jelly beans cookie cake soufflé cookie gummies. Marzipan sweet roll sugar plum chocolate powder jelly-o chocolate bar.</p>
+	<div id="mainForm">
+	<!-- <form action="#" method="post" id="form"> -->
+	<form action="#" method="post" id="form" novalidate>
+		<dl>
+			<dt>First Name<span class="">*</span></dt>
+			<dd>
+				<input type="text" id="firstname" required name="firstname" size="40" placeholder="John" class="">
+				<span class="errorMsg"  id="errorFname"></span>
+			</dd>
+
+			<dt>Last Name<span class="">*</span></dt>
+			<dd>
+				<input type="text" id="lastname" required name="lastname" size="40" placeholder="Smith" class="">
+				<span class="errorMsg"  id="errorLname"></span>
+			</dd>
+
+			
+			<dt>Email<span>*</span></dt>
+			<dd>
+				<input type="email" required value="" size="40" name="email" placeholder="johnsmith@example.com" class="">
+				<span class="errorMsg" id="errorEmail"></span>
+			</dd>
 		
-		<div id="slider">
-			<div id="slider_inner">
-				<ul id="photo_list">
-					<li><a href="#"><img src="./images/s_chicken_300.JPG" alt="chicken oyaki"></a></li>
-					<li><a href="#"><img src="./images/s_eggplant_300.JPG" alt="eggplant oyaki"></a></li>
-					<li><a href="#"><img src="./images/s_pork_300.JPG" alt="pork oyaki"></a></li>
-					<li><a href="#"><img src="./images/s_pumpkin_300.JPG" alt="pumpkin oyaki"></a></li>
-					<li><a href="#"><img src="./images/s_sample1_300.JPG" alt="sample oyaki"></a></li>
-					<li><a href="#"><img src="./images/s_sample2_300.JPG" alt="sample oyaki"></a></li>
-				</ul>
-			</div><!-- slider_inner -->
-		</div><!-- slider -->
-	</div><!-- slider_wrap -->
-	<p id="stop">Stop</p>
+			<dt>Gender</dt>
+			<dd>
+				<input type="radio" value="male" name="gender" id="male" class="">
+				<label for="male">Male</label>
+				
+				<input type="radio" value="female" name="gender" id="female" class="">
+				<label for="female">Female</label>
+			</dd>
+
+			<dt>Comments<span>*</span></dt>
+			<dd>
+				<textarea id="inquiry" required name="inquiry" rows="10" cols="40" class=""
+					placeholder="Your message must be greater than 20 characters"></textarea>
+				<span class="errorMsg" id="errorInquiry"></span>
+			</dd>	
+
+			<dt>How did you find this website?</dt>
+			<dd>
+				<select id="search" name="search">
+					<option value="internet" selected>Internet</option>
+					<option value="friend">Friend</option>
+					<option value="tv">TV</option>
+					<option value="magazine">Magazine</option>
+					<option value="other">Other</option>
+				</select>
+				<input type="text" name="other_text" value="">
+			</dd>
+		</dl>
+		<p class="submit"><input type="submit" value="submit" id="submit"></p>
+	</form>
+	</div><!-- mainForm -->
+	<!-- confirm dialog -->
+	<div class="dialog" id="contactFormDialog">
+		<h3>Are you sure you want to submit?</h3>
+		<button class="dialogYes">Yes</button>
+		<button class="dialogNo">No</button>
+	</div><!-- dialog -->
 </section>
 </main>
 </body>

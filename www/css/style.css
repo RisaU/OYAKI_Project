@@ -61,6 +61,16 @@ a:hover {
     background-size: cover;
     background-position: center center;
 }
+.slideshow #slideItem1 {
+	background-image: url(./../images/001_26-1.jpg);
+}
+.slideshow #slideItem2 {
+	background-image: url(./../images/002_01_26-1.jpg);
+}
+.slideshow #slideItem3 {
+	background-image: url(./../images/003_20160824130827.jpg);
+}
+
 .in {
     transform: scale(1);
     z-index: 2;

@@ -4,8 +4,9 @@
 */
 #slider_wrap {
 	margin: 20px auto;
-	width: 1300px;
-	height: 340px;
+	width: 90%;
+	max-width: 1300px;
+	max-height: 340px;
 	padding: 20px;
 	/* background:#efefef;*/
 	position: relative;
@@ -43,6 +44,9 @@
 #photo_list img {
 	border: none;
 	border-radius: 50%;
+	width: 100%;
+	max-width: 300px;
+	height: auto;
 }
 #stop {
 	cursor: pointer;
