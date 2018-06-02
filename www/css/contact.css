@@ -1,3 +1,6 @@
+.toggleElement {
+	display: none;
+}
 #contact #mainForm {
 	margin-top: 30px;
 }

@@ -10,8 +10,33 @@ function init() {
 	if (!document.createElement) return false;
 	if (!document.createTextNode) return false;
 	if (!document.getElementById) return false;
-
+	
 	console.log("Initializtion is done!");
+
+	/**
+	* task 5
+	* 
+	* ref: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+	*/
+	var btnToggle = document.getElementById("btnToggle");
+	btnToggle.onclick = function() {
+		var btnText = this.innerHTML;
+		var showText = document.getElementsByClassName("toggleElement");
+		
+		if (btnText == "Read More") {// show
+			showText[0].classList.add("show");
+			btnToggle.innerHTML = "Close";
+		} else {
+			// hide
+			showText[0].classList.remove("show");
+			btnToggle.innerHTML = "Read More";
+			
+		}
+
+	console.log(btnText);
+	}
+
+	
 }
 /**
 * Main Function of Validation
