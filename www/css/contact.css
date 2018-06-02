@@ -116,15 +116,59 @@ input, textarea {
 	max-width: 900px;
 	margin: auto;
 	margin-top: 40vh;
-	padding: 30px 20px;
 	text-align: center;
 	border: 1px solid #aaa;
 	box-shadow: 2px 2px 4px #888;
+	background-color: white;
+	z-index: 10;
+	
+	/* hidden firstly */
 	display: none;
+	/* display on front of window */
+	position: fixed;
+	top: -25%;
+    left: 25%;
+}
+.dialog h3 {
+	font-size: 150%;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1),
+               -1px -1px 1px rgba(255, 255, 255, .7);
+	padding: 20px 0;
+    background-color: #642200;
+
+}
+/* contents */
+#contactFormDialog dl {
+	width: 80%;
+	padding: 5% 10%;
+	text-align: left;
+	overflow: hidden;
+}
+#contactFormDialog dl dt {
+	width: 30%;
+}
+#contactFormDialog dl dd {
+	width: 60%;
+}
+.dialog button {
+	cursor: pointer;
+	letter-spacing: 2px;
+	padding: 10px;
+	margin: 0 3% 5% 3%;
+	background-color: #642200;
+	border: 0;
+	border-radius: 5px;
+	font-size: 130%;
+	color: white;
+}
+.dialog button:hover {
+	opacity: 0.8;	
 }
 .show {
 	display: block;
 }
+
 
 
 

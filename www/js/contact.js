@@ -17,7 +17,6 @@ function init() {
 * Main Function of Validation
 */
 function validForm() {
-	var submit = document.getElementById("submit");
 	var form = document.getElementById("form");
 	var errors = 0;
 	var isValid = true;// no need?
@@ -38,62 +37,29 @@ function validForm() {
 		// Check Comments
 		errors += validComments(form);
 
-
+		// errors = 0; //@test
+		// if there is an error
 		if (errors > 0) {
-			isValid = false;
-		} else {
-			isValid = true;
-		}
-		
-		isValid = true;// @test
-		// console.log(isValid);
-		
-		if (!isValid) { // error
-			// alert('Preventing form submission');
 			e.preventDefault();
 		} else {// no error
-		
+
 			// Pop up confirm dialog box 
 			var result = displayDialog(form);
 			// var result = confirm('Are you sure you want to submit?\n' 
 								// + userAnswer, "");
-			// if (!result) {
-				// return false;
-			// } else {
+			
+			// if user click NO
+			if (!result) {
+				alert(getErrorMsg("submit"));
+				return false;
+			} else {
 				// alert("Thank you\n" 
 					// + "Your form was submitted Successfully!");
-			// }
-			// return false;
+			}
 			
 		}
-		return false;
     }
 }
-
-/**
-* Pop up a confirm dialog box
-* ref: https://www.sejuku.net/blog/28217
-* ref: http://www.atmarkit.co.jp/ait/articles/0807/02/news144.html
-*/
-function displayDialog(form) {
-	// dialog
-	var dialog = document.getElementById("contactFormDialog");
-	var yes = document.getElementsByClassName("dialogYes");
-	var no = document.getElementsByClassName("dialogNo");
-	
-	// text
-	var divNode = document.createElement("div");
-	divNode.innerHTML = getConfirmText(form);
-	// insert after YES button
-	dialog.insertBefore(divNode, yes[0]);
-	
-
-	// pop up
-	dialog.classList.add("show");
-	
-	return true;
-}
-
 /**
 * Initialize error text
 */
@@ -115,12 +81,12 @@ function validName(form) {
 	var error = 0;
 
 	if (firstName.value == "") {
-		document.getElementById('errorFname').innerHTML = "Please enter your first name";
+		document.getElementById('errorFname').innerHTML = getErrorMsg("required");
 		// firstName.focus();
 		error = 1;
 	}
 	if (lastname.value == ""){
-		document.getElementById('errorLname').innerHTML = "Please enter your last name";
+		document.getElementById('errorLname').innerHTML = getErrorMsg("required");
 		// lastName.focus();
 		error = 1;
 	}
@@ -137,14 +103,14 @@ function validEmail(form) {
 	
 	if (email.value == "") {
 		document.getElementById('errorEmail').innerHTML 
-			= "Please enter your Email address!"
+			= getErrorMsg("required");
 		error = 1;	
 	} else if (email.value.match(mailformat)) {
 		// nothing to do
 		// return true;
 	} else {
 		document.getElementById('errorEmail').innerHTML 
-			= "Sorry, '" + email.value + "' is not recognized as an Email address!"
+			= getErrorMsg("email");
 		error = 1;
 	}
 	return error;
@@ -155,19 +121,77 @@ function validEmail(form) {
 function validComments(form) {
 	var comments = form.inquiry;
 	var error = 0;
-	
 	if (comments.value == "") {
 		document.getElementById('errorInquiry').innerHTML 
-			= "Please enter something!";
+			= getErrorMsg("required");
 		error = 1;
-	}
-	if (comments.value.length < 20) {
+	} else if (comments.value.length < 20) {
 		document.getElementById('errorInquiry').innerHTML 
-			= "Comments should contain at least 20charactors!";
+			= getErrorMsg("CommentsMin");
 		error = 1;
 	}
 	return error;
 }
+/**
+* Pop up a confirm dialog box
+* ref: https://www.sejuku.net/blog/28217
+* ref: http://www.atmarkit.co.jp/ait/articles/0807/02/news144.html
+*/
+function displayDialog(form) {
+	// dialog
+	var dialog = document.getElementById("contactFormDialog");
+	var yes = document.getElementsByClassName("dialogYes");
+	var no = document.getElementsByClassName("dialogNo");
+	
+	// text
+	var dlNode = document.createElement("dl");
+	dlNode.innerHTML = getConfirmText(form);
+	// insert after YES button
+	dialog.insertBefore(dlNode, yes[0]);
+
+	// pop up
+	dialog.classList.add("show");
+	
+	
+	// button
+	yes[0].onclick = function() {
+		// delete dialog
+		dialog.classList.remove("show");
+		dialog.removeChild(dlNode);
+		
+		// it should make original one(later)
+		alert("Thank you\n"
+			+ "Your form was submitted Successfully!");
+		
+		// console.log('yes');
+		return true;
+	};
+	no[0].onclick = function() {
+		// delete dialog
+		dialog.classList.remove("show");
+		dialog.removeChild(dlNode);
+
+		return false;
+	};
+
+	return false;
+}
+/**
+* Create and get Error text
+*/
+function getErrorMsg(error) {
+	var text = [];
+	text = {
+		"required": "This field is required.",
+		"CommentsMin": "Comments should contain at least 20charactors!",
+		"email": "Sorry, the email address is not recognized!",
+		"submit": "There was a problem with your submission."
+	};
+	
+	return text[error];
+}
+
+
 /**
 * Create and get confirm text 
 */
@@ -188,16 +212,18 @@ function getConfirmText(form) {
 			+ "How did you know this website?: " + question + "\n";
 	
 */ 
-	var rtn = "<p>First Name: " + firstName + "</p><br>"
-			+ "<p>Last Name: " + lastName + "</p><br>"
-			+ "<p>Email: " + email + "</p><br>"
-			+ "<p>Gender: " + gender + "</p><br>"
-			+ "<p>Comments: " + comments + "</p><br>"
-			+ "<p>HOw did you know this website?: " + question + "</p><br>";
+	var rtn = "<dt>First Name:</dt><dd>" + firstName + "</dd><br>"
+			+ "<dt>Last Name:</dt><dd>" + lastName + "</dd><br>"
+			+ "<dt>Email:</dt><dd>" + email + "</dd><br>"
+			+ "<dt>Gender:</dt><dd>" + gender + "</dd><br>"
+			+ "<dt>Comments:</dt><dd>" + comments + "</dd><br>"
+			+ "<dt>How did you know this website?:</dt><dd>" + question + "</dd><br>";
 
 	if (qCmnt != "") {
 		// rtn += qCmnt;
-		rtn += "<p>" + qCmnt + "</p>";   
+		rtn += "<dd>" + qCmnt + "</dd>";   
+	} else {
+		// rtn += "</dl>";
 	}
 	return rtn;
 }
