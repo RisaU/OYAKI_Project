@@ -1,6 +1,15 @@
 .toggleElement {
 	display: none;
 }
+#btnToggle {
+	width: 20vw;
+	margin: 0.5%;
+    color: #01018a;
+    cursor: pointer;
+}
+#btnToggle:hover {
+	opacity: 0.8;
+}
 #contact #mainForm {
 	margin-top: 30px;
 }

@@ -15,7 +15,7 @@ function init() {
 
 	/**
 	* task 5
-	* 
+	* function: Toggle between hiding and showing an element
 	* ref: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 	*/
 	var btnToggle = document.getElementById("btnToggle");
@@ -32,8 +32,6 @@ function init() {
 			btnToggle.innerHTML = "Read More";
 			
 		}
-
-	console.log(btnText);
 	}
 
 	
