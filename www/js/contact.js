@@ -1,5 +1,6 @@
 /**
 * This is a validattion for contact page
+* This is for @task1, @task2 and @task9
 * ref(for Confirm dialog box): https://www.sejuku.net/blog/28217
 */
 
@@ -14,7 +15,7 @@ function init() {
 	console.log("Initializtion is done!");
 
 	/**
-	* task 5
+	* @task9
 	* function: Toggle between hiding and showing an element
 	* ref: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 	*/
@@ -30,24 +31,21 @@ function init() {
 			// hide
 			showText[0].classList.remove("show");
 			btnToggle.innerHTML = "Read More";
-			
 		}
 	}
-
-	
 }
 /**
 * Main Function of Validation
 */
 function validForm() {
 	var form = document.getElementById("form");
+	var submit = document.getElementById("submitBtn");
 	var errors = 0;
 	var isValid = true;// no need?
+	
 
-	// submit.onclick = function(){
-	form.onsubmit = function(e){
-		
-		
+	submit.onclick = function(e){
+	// form.onsubmit = function(e){		
 		// Delete all error messages
 		initErrorText();
 		
@@ -63,23 +61,25 @@ function validForm() {
 		// errors = 0; //@test
 		// if there is an error
 		if (errors > 0) {
-			e.preventDefault();
+			// e.preventDefault();
+			return false;
 		} else {// no error
 
 			// Pop up confirm dialog box 
-			var result = displayDialog(form);
+			// var result = displayDialog(form);
+			displayDialog(form);
+
 			// var result = confirm('Are you sure you want to submit?\n' 
-								// + userAnswer, "");
-			
-			// if user click NO
-			if (!result) {
-				alert(getErrorMsg("submit"));
-				return false;
-			} else {
+					// + getConfirmText(form), "");
+
+			// if (!result) {
+				// return false;
+			// } else {
 				// alert("Thank you\n" 
 					// + "Your form was submitted Successfully!");
-			}
-			
+				// return true;
+			// }
+		return false;
 		}
     }
 }
@@ -108,7 +108,7 @@ function validName(form) {
 		// firstName.focus();
 		error = 1;
 	}
-	if (lastname.value == ""){
+	if (lastName.value == ""){
 		document.getElementById('errorLname').innerHTML = getErrorMsg("required");
 		// lastName.focus();
 		error = 1;
@@ -155,6 +155,7 @@ function validComments(form) {
 	}
 	return error;
 }
+
 /**
 * Pop up a confirm dialog box
 * ref: https://www.sejuku.net/blog/28217
@@ -165,6 +166,7 @@ function displayDialog(form) {
 	var dialog = document.getElementById("contactFormDialog");
 	var yes = document.getElementsByClassName("dialogYes");
 	var no = document.getElementsByClassName("dialogNo");
+	var rtn = false;
 	
 	// text
 	var dlNode = document.createElement("dl");
@@ -181,23 +183,25 @@ function displayDialog(form) {
 		// delete dialog
 		dialog.classList.remove("show");
 		dialog.removeChild(dlNode);
+
+		// data submit!!!
+		form.submit();
+		// jump to thank you page
+		location.href = "./thankyou.html";
 		
-		// it should make original one(later)
-		alert("Thank you\n"
-			+ "Your form was submitted Successfully!");
-		
-		// console.log('yes');
-		return true;
+		rtn = true;
+		return rtn;
 	};
 	no[0].onclick = function() {
 		// delete dialog
 		dialog.classList.remove("show");
 		dialog.removeChild(dlNode);
-
-		return false;
+		
+		rtn = false;
+		return rtn;
 	};
 
-	return false;
+	// return rtn;
 }
 /**
 * Create and get Error text

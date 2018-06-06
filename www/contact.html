@@ -31,47 +31,41 @@
 <script src="./js/function.js"></script>
 <script src="./js/contact.js"></script>
 
-<script>
-</script>
+    <script>
+
+    </script>
 </head>
-<body>
+<body id="contact">
 <header>
-    <div class="wrap">
-        <div id="hContent">
-            <a href="index.html"><img id="logo" src="images/logo.png" width="150" height="150" alt="OYAKI logo"></a>
-			<h1 id="slogan">It's worth a taste</h1>
-            <nav>
-                <ul class="Chewy">
-                    <li><a href="index.html" id="current-page">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">MENU</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li>
-                        <a href="http://facebook.com/" target="_blank"><img src="images/icon_Facebook.png" width="25" height="25" alt="Facebook"></a>
-                        <a href="http://instagram.com/" target="_blank"><img src="images/icon_Instagram.png" width="25" height="25" alt="Instagram"></a>
-                        <a href="http://youtube.com/" target="_blank"><img src="images/icon_Youtube.png" width="25" height="25" alt="Youtube"></a>
-                    </li>
-               </ul>
-            </nav>
-        </div><!-- hContent -->
-        <div class="slideshow">
-            <div class="item" id="slideItem1"></div>
-            <div class="item" id="slideItem2"></div>
-            <div class="item" id="slideItem3"></div>
-        </div><!--  slideshow -->
-    </div><!-- wrap -->
+	<nav id="fixedNav" class="">
+		<ul class="Chewy">
+			<li class="fixedNavLogo"><a href="index.html"><img src="./images/logo.png" alt="logo"></a></li>
+			<li><a href="index.html" id="current-page">HOME</a></li>
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#">MENU</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+			<li><a href="#">BLOG</a></li>
+		</ul>
+	</nav>
 
 </header>
 <main>
 <section class="mainContents" id="contact">
 	<h2>Contact</h2>
-	<p>Gingerbread gummi bears liquorice candy wafer pie. Caramels tiramisu toffee. Lollipop marzipan chocolate bar tootsie roll gingerbread. Jujubes carrot cake jelly beans powder jelly-o.</p>
-	<p class="toggleElement">Cheesecake oat cake marzipan cheesecake ice cream jelly beans chocolate bar chupa chups. Cotton candy chocolate bar fruitcake jelly beans cookie cake soufflé cookie gummies. Marzipan sweet roll sugar plum chocolate powder jelly-o chocolate bar.</p>
+	<p class="">Got a question? We'd love to hear from you.</p>
+	<p class="">Send us a message and we'll respond as soon as possible.</p>
+	
+	<div class="toggleElement">
+		<ul>
+			<li>First and Last Name, Email and Comments are required.</li>
+			<li>You can leave a blank with Gender and the question of "How did you find this website?".</li>
+		</ul>
+	</div><!-- toggleElement -->
 	<p id="btnToggle">Read More</p>
+	
 	<div id="mainForm">
 	<!-- <form action="#" method="post" id="form"> -->
-	<form action="#" method="post" id="form" novalidate>
+	<form name="myform" action="#" method="post" id="form" novalidate>
 		<dl>
 			<dt>First Name<span class="">*</span></dt>
 			<dd>
@@ -120,7 +114,8 @@
 				<input type="text" name="other_text" value="">
 			</dd>
 		</dl>
-		<p class="submit"><input type="submit" value="submit" id="submit"></p>
+		<!-- <p class="submit"><input type="submit" value="submit" id="submit"></p>  -->
+		<p class="submit"><button value="submit" id="submitBtn">submit</p>
 	</form>
 	</div><!-- mainForm -->
 	<!-- confirm dialog -->
@@ -131,5 +126,6 @@
 	</div><!-- dialog -->
 </section>
 </main>
+
 </body>
 </html>

@@ -1,0 +1,29 @@
+main {
+
+}
+#thanks { 
+/* this is only for IE */
+	margin-top: 100px;
+}
+#thanks h2 {
+	font-size: 300%;
+}
+#thanks p {
+	font-size: 180%;
+	margin: 30px 0;
+}
+#cvsContainer {
+	width: 100%;
+	height: auto;
+}
+#cvs {
+	background-color: #fff;
+/*
+	background-image: url(./../images/fuji.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+*/
+}
+
+
+    

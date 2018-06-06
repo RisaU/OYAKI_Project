@@ -1,6 +1,14 @@
 .toggleElement {
 	display: none;
 }
+.toggleElement ul {
+	padding: 10px;
+	border: 2px dashed #6422006e; 
+}
+.toggleElement ul li {
+	color: #642200;
+	line-height: 2;
+}
 #btnToggle {
 	width: 20vw;
 	margin: 0.5%;
@@ -44,6 +52,7 @@ input, textarea {
 #contact dl dd {
 	float:left;
 	width: 65%;
+	word-wrap: break-word;
 }
 
 #contact dl dd input[type="text"],
@@ -91,10 +100,10 @@ input, textarea {
 	text-align: center;
 	margin-top: 30px;
 }
-#contact input[type="submit"]:hover {
+#contact .submit #submitBtn:hover {
 	opacity: 0.8;
 }
-#contact .submit input {
+#contact .submit #submitBtn {
 	cursor: pointer;
 	letter-spacing: 2px;
 	padding: 10px 100px;

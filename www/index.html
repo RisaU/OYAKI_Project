@@ -19,6 +19,7 @@
 <!-- css -->
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/slider.css">
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Permanent+Marker" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -28,17 +29,19 @@
 <!-- js -->
 <script src="./js/jquery-3.2.1.min.js"></script><!-- jQuery本体 -->
 <script src="./js/function.js"></script>
+<script src="./js/home.js"></script>
+<script src="./js/slider.js"></script>
 
 <script>
 </script>
 </head>
-<body>
+<body id="home">
 <header>
     <div class="wrap">
         <div id="hContent">
             <a href="index.html"><img id="logo" src="images/logo.png" width="150" height="150" alt="OYAKI logo"></a>
 			<h1 id="slogan">It's worth a taste</h1>
-            <nav>
+            <nav id="mailNav">
                 <ul class="Chewy">
                     <li><a href="index.html" id="current-page">HOME</a></li>
                     <li><a href="#">ABOUT</a></li>
@@ -59,7 +62,16 @@
             <div class="item" id="slideItem3"></div>
         </div><!--  slideshow -->
     </div><!-- wrap -->
-
+	<nav id="fixedNav" class="fadein">
+		<ul class="Chewy">
+			<li class="fixedNavLogo"><a href="index.html"><img src="./images/logo.png" alt="logo"></a></li>
+			<li><a href="index.html" id="current-page">HOME</a></li>
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#">MENU</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+			<li><a href="#">BLOG</a></li>
+		</ul>
+	</nav>
 </header>
 <main>
 <div class="callToAction fadein">
@@ -76,6 +88,28 @@
 		</a>
 	</section>
 </div><!-- callToAction -->
+<section>
+	<div id="slider_wrap">
+		<p id="slider_prev"><img src="images/nav_prev.png" 
+			height="30" width="20" alt="previous"></p>
+		<p id="slider_next"><img src="images/nav_next.png" 
+			height="30" width="20" alt="next"></p>
+		
+		<div id="slider">
+			<div id="slider_inner">
+				<ul id="photo_list">
+					<li><a href="#"><img src="./images/s_chicken_300.JPG" alt="chicken oyaki"></a></li>
+					<li><a href="#"><img src="./images/s_eggplant_300.JPG" alt="eggplant oyaki"></a></li>
+					<li><a href="#"><img src="./images/s_pork_300.JPG" alt="pork oyaki"></a></li>
+					<li><a href="#"><img src="./images/s_pumpkin_300.JPG" alt="pumpkin oyaki"></a></li>
+					<li><a href="#"><img src="./images/s_sample1_300.JPG" alt="sample oyaki"></a></li>
+					<li><a href="#"><img src="./images/s_sample2_300.JPG" alt="sample oyaki"></a></li>
+				</ul>
+			</div><!-- slider_inner -->
+		</div><!-- slider -->
+	</div><!-- slider_wrap -->
+	<p id="stop">Stop</p>
+</section>
 <section class="mainContents fadein" id="about">
 	<h2>The reason for peace of mind</h2>
 	<p>Bonbon brownie marzipan. Cake chocolate bar toffee caramels chocolate bar liquorice chupa chups cheesecake jelly-o. Jujubes apple pie muffin.</p>
