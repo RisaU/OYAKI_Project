@@ -18,11 +18,16 @@ main {
 }
 #cvs {
 	background-color: #fff;
-/*
+	background-image: url(./../images/thankyou.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/*
 	background-image: url(./../images/fuji.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-*/
+	*/
+
 }
 
 
