@@ -125,6 +125,7 @@ a:hover {
 	margin: 0;
 	padding: 1%;
 	width: 98%;
+	height: 9vh;
 	display: flex;
 	flex-flow: row;
 	background-color: rgba(255, 255, 255, 1);
@@ -264,6 +265,39 @@ a:hover {
 }
 
 
+	/* for mobile */
+	@media screen and (max-width: 480px) { 
+		/* ヘッダー */
+		#slogan {
+			font-size: 220%;
+		}
+		.Chewy ul {
+		
+		}
+		.Chewy li {
+			padding: 0 1%;
+		}
+		.Chewy a {
+			font-size: 100%;
+		}
+		/* contents */
+		.callToAction a p {
+			font-size: 100%;
+		}
+		
+		/* navigation */
+		#fixedNav ul {
+			
+		}
+		
+		#fixedNav ul a {
+			font-size: 90%;
+			padding: 12px 10px;
+		}
+		#fixedNav img {
+			width: 30px;
+			height: auto;
+		}
 
 
 
@@ -274,5 +308,4 @@ a:hover {
 
 
 
-
-
+	}

@@ -3,6 +3,7 @@ $(window).on('load',function(){
 	
 			// 固定navigation
 	var navH = $('#fixedNav').height();
+	// console.log(navH);
 	var main = $('main');
 	main.css('margin-top', navH);
 	

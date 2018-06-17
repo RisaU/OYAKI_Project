@@ -189,14 +189,24 @@ input, textarea {
 .show {
 	display: block;
 }
+	/* for mobile */
+	@media screen and (max-width: 480px) { 
+
+
+	#contactFormDialog dl dt, 
+	#contactFormDialog dl dd {
+		font-size: 90%;
+		padding: 1%;
+	}
+	#contactFormDialog dl {
+		width: 100%;
+		margin: auto;
+		padding: 1% 5%;
+	}
 
 
 
-
-
-
-
-
+	}
 
 
 
