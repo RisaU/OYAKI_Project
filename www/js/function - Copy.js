@@ -1,18 +1,12 @@
 // load: 画像などのデータ全ての読み込みが完了したら実行
 $(window).on('load',function(){
 	
-	// 固定navigation
-	// var navH = $('#fixedNav').height();
+			// 固定navigation
+	var navH = $('#fixedNav').height();
 	// console.log(navH);
-	// var main = $('main');
-	// main.css('margin-top', navH);
+	var main = $('main');
+	main.css('margin-top', navH);
 	
-	// Drawer Menu
-	$(".navbar_toggle").on("click", function(){
-		$(this).toggleClass("open");
-		$(".menu").toggleClass("open");
-	});
- 	
 });
 /*  
 * ふわっとフェードインするあれ

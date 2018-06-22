@@ -4,23 +4,23 @@ $(window).on('load',function(){
 	* スクロールでナビゲーションtopに固定
 	* ref: https://www.nxworld.net/tips/stikcy-or-change-header-and-navigation-when-scrolling-using-jquery.html
 	*/
-	var nav = $('#mailNav');
-	var showNav = $('#fixedNav');// 固定navigation
+	var nav = $('#hContentNav');
+	var showNav = $('.mainNav');// 固定navigation
 	var main = $('main');
 	navH = nav.outerHeight;
 	navPos = nav.offset().top;
-	fixedClass = "isFixed";
+	fixedClass = "fixed";
 	
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
 		// console.log(nav);
 		if (scroll > navPos) {
 			showNav.addClass(fixedClass);
-			showNav.css('display', 'block');
+			// showNav.css('display', 'block');
 			main.css('margin-top', navH);
 		} else {
 			showNav.removeClass(fixedClass);
-			showNav.css('display', 'none');
+			// showNav.css('display', 'none');
 			main.css('margin-top', '0');
 		}
 	});

@@ -102,109 +102,8 @@ a:hover {
     margin: 20px auto;
 }
 /**
- * 固定ナビゲーション(excent top page)
- */
-.mainNav {
-	width: 100%;
-	height: 100px;
-	position: relative;
-	background-color: rgba(255, 255, 255, 1);
-	box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.2);
-}
-.drawer {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	position: relative;
-	height: 100px;
-	padding: 0 1em;
-} 
-.drawer a {
-	margin: auto;
-}
-.drawer img {
-	width: 90px;
-	height: auto; 
-	margin: 5px auto;
-}
-/* Hamburger */
-.nav-bar_toggle {
-	z-index: 9999;
-}
-.navbar_toggle span {
-	position: relative;
-	display: block;
-	height: 4px;
-	width: 40px;
-	background: #5c6b80;
-	border-radius: 4px;
-}
-.navbar_toggle span:nth-child(1) {
-	top: 0;
-}
-.navbar_toggle span:nth-child(2) {
-	margin: 8px 0;
-}
-.navbar_toggle span:nth-child(3) {
-	top: 0;
-} 
-/* OPEN時の動き */
-.navbar_toggle.open span:nth-child(1) {
-	transform: translateY(12.5px) rotate(-45deg);
-}
-.navbar_toggle.open span:nth-child(2) {
-	opacity: 0;
-	animation: flyaway 0.5s;
-
-}
-@keyframes flyaway {
-    from {
-		left: 0; opacity: 1;
-	}
-    to {
-		left: -800%; opacity: 0;
-	}
-}
-.navbar_toggle.open span:nth-child(3) {
-	transform: translateY(-12.5px) rotate(45deg);
-}
-/* Navigation */ 
-.mainNav .menu {
-	transform: translateX(100%);
-	transition: 0.5s ease;
-	z-index: 1000;
-}
-.mainNav .menu ul li {
-	padding: 1.5em;
-	border-bottom: 1px solid #ccc;
-	text-align: center;
-}
-.mainNav .menu ul li a {
-	color: #fff;
-	text-decoration: none;
-}
-/* OPEN時の動き */
-.mainNav .menu.open {
-	transform: translateX(0);
-	overflow-y: auto;/* only for IE */
-	background: rgba(0, 0, 0, 0.9);
-}
-/*only for top page */
-#home .mainNav {
-	/* display: none; */
-}
-.fixed {
-	display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-/**
 * スクロールでナビゲーションtopに固定
-
+*/
 .isFixed {
 	position: fixed;
 	top: 0;
@@ -249,9 +148,6 @@ a:hover {
 	width: 50px;
 	height: auto;
 }
-*/
-
-
 /**
 * main content
 */
@@ -367,50 +263,7 @@ a:hover {
 	border-width: 3px!important;
 	border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
 }
-/**
- * for Desktop PC
- */
-	@media screen and (min-width: 768px) {
-		.mainNav {
-			display: flex;
-			flex-direction: row;
-		}
-		.navbar_toggle {
-			display: none;
-		}
-		.mainNav .menu {
-			width: 100%;
-			transform: translateX(0);
-			margin: auto;
-		}
-		.mainNav .menu ul {
-			height: 70px;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-end;
-			align-items: center;
-		}
-		.mainNav .menu ul li {
-			padding: 0 1em;
-			border-bottom: none;
-		}
-		.mainNav .menu ul li a {
-			color: #000;
-		}
 
-	}
-/**
- * for タブレット
- * Show up Hamburger Menu (SCREEN < 768px)
- */
-	@media screen and (max-width: 768px) {
-		.drawer a {
-			margin: 0;
-		}
-		.drawer img {
-			width: 50px;
-		}		
-	}
 
 	/* for mobile */
 	@media screen and (max-width: 480px) { 
@@ -445,6 +298,7 @@ a:hover {
 			width: 30px;
 			height: auto;
 		}
+
 
 
 
