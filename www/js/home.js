@@ -1,29 +1,41 @@
 $(window).on('load',function(){
-
 	/**
-	* スクロールでナビゲーションtopに固定
-	* ref: https://www.nxworld.net/tips/stikcy-or-change-header-and-navigation-when-scrolling-using-jquery.html
-	*/
-	var nav = $('#hContentNav');
-	var showNav = $('.mainNav');// 固定navigation
-	var main = $('main');
-	navH = nav.outerHeight;
-	navPos = nav.offset().top;
-	fixedClass = "fixed";
+	 * 固定ナビゲーション
+	 * 1. ナビゲーションが途中から固定
+	 * https://www.nxworld.net/tips/stikcy-or-change-header-and-navigation-when-scrolling-using-jquery.html
+	 */
+	var $win = $(window);
+	var $main = $("main");
+	var $nav = $("#hContentNav");
+	var navPos = $nav.offset().top;
+	var $mainNav = $(".mainNav");
+	var mNavHeight = $mainNav.outerHeight();
+	var fixedClass = "is-fixed";
+	var mNavCss;
+
+	if (getDevice == "other" || getDevice == "tab") {
+		mNavCss = {
+			"display": "flex",
+			"flex-direction": "row"
+		}
+	} else {
+		mNavCss = {"display": "block"}
+	}
 	
-	$(window).scroll(function() {
-		var scroll = $(this).scrollTop();
-		// console.log(nav);
-		if (scroll > navPos) {
-			showNav.addClass(fixedClass);
-			// showNav.css('display', 'block');
-			main.css('margin-top', navH);
+	$win.on("load scroll", function() {
+		var value = $(this).scrollTop();
+		
+		if (value > navPos) {
+			$mainNav.addClass(fixedClass);
+			$mainNav.css(mNavCss);
+			$main.css("margin-top", mNavHeight);
 		} else {
-			showNav.removeClass(fixedClass);
-			// showNav.css('display', 'none');
-			main.css('margin-top', '0');
+			$mainNav.removeClass(fixedClass);
+			$mainNav.css("display", "none");
+			$main.css("margin-top", "0");
 		}
 	});
+
 	/**
 	* http://yurixxx8.hatenablog.com/entry/2017/02/05/022049
 	* プラグインなしで拡大しながらフェードで切り替わるスライド

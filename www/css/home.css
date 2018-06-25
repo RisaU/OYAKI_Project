@@ -1,0 +1,35 @@
+.mainNav {
+	/* display: none; */
+}
+	@media screen and (max-width: 900px) {
+		.Chewy a {
+			font-size: 180%;
+		}	
+	}
+
+/**
+ * for タブレット
+ * Show up Hamburger Menu (SCREEN < 768px)
+ */
+	@media screen and (max-width: 768px) {
+		/* Hero Headerの上にmainNavを表示させる */
+		.wrap {
+			z-index: -1;
+		}
+		#slogan {
+			font-size: 250%;
+		}
+		/* タブレット・スマホではヒーロヘッダーのナビは非表示 */
+		#hContentNav {
+			display: none;
+		}
+		/* .mainNav { */
+			/* display: flex; */
+		/* } */
+	}
+		/* for mobile */
+	@media screen and (max-width: 480px) {
+		#slogan {
+			font-size: 180%;
+		}
+	}
