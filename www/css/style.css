@@ -237,6 +237,7 @@ a:hover {
 /* call to action */
 .callToAction {
 	display: flex;
+	flex-direction: row;
 	padding: 0;
 }
 .callToAction section {
@@ -377,7 +378,14 @@ a:hover {
 		}
 		.drawer img {
 			width: 50px;
-		}		
+		}
+		/* call to action */
+		.callToAction {
+			flex-direction: column;
+		}	
+		.callToAction section {
+			width: 90%;
+		}
 	}
 
 	/* for mobile */
