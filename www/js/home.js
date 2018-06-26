@@ -17,7 +17,7 @@ $(window).on('load',function(){
 	var windowW;
 	
 	$win.on("load scroll resize", function() {
-		windowW = $win.width();	
+		windowW = $win.outerWidth();	
 		// if (getDevice == "sp" || getDevice == "tab") 
 		if (windowW < tabletW) {
 			// for tablet, mobile
@@ -31,16 +31,7 @@ $(window).on('load',function(){
 				"flex-direction": "row"
 			}	
 		}
-		// if (windowW > tabletW) {
-			// mNavCss = {
-				// "display": "flex",
-				// "flex-direction": "row"
-			// }
-		// } else {// for mobile
-			// mNavCss = {
-				// "display": "block"
-			// }
-		// }
+		$mainNav.css(mNavCss);
 		
 		var value = $(this).scrollTop();
 		
