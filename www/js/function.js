@@ -12,7 +12,7 @@
 		return 'other';
 	}
 	})();
-console.log("Device: " + getDevice);	
+// console.log("Device: " + getDevice);	
 
 // load: 画像などのデータ全ての読み込みが完了したら実行
 $(window).on('load',function(){	

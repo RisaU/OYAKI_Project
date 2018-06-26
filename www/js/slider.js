@@ -46,5 +46,4 @@ $(function(){
 			$("#photo_list li:first").appendTo(photo_list$);
 		});
 	});
-console.log(li$.width());
 });

@@ -12,18 +12,36 @@ $(window).on('load',function(){
 	var mNavHeight = $mainNav.outerHeight();
 	var fixedClass = "is-fixed";
 	var mNavCss;
-
-	if (getDevice == "other" || getDevice == "tab") {
-		// if (getDevice == "tab") {
-		mNavCss = {
-			"display": "flex",
-			"flex-direction": "row"
-		}
-	} else {
-		mNavCss = {"display": "block"}
-	}
+	var tabletW = "768";
+	var mobileW = "460";
+	var windowW;
 	
-	$win.on("load scroll", function() {
+	$win.on("load scroll resize", function() {
+		windowW = $win.width();	
+		// if (getDevice == "sp" || getDevice == "tab") 
+		if (windowW < tabletW) {
+			// for tablet, mobile
+			mNavCss = {
+				"display": "block"
+			}	
+		} else {
+			// for desktop
+			mNavCss = {
+				"display": "flex",
+				"flex-direction": "row"
+			}	
+		}
+		// if (windowW > tabletW) {
+			// mNavCss = {
+				// "display": "flex",
+				// "flex-direction": "row"
+			// }
+		// } else {// for mobile
+			// mNavCss = {
+				// "display": "block"
+			// }
+		// }
+		
 		var value = $(this).scrollTop();
 		
 		if (value > navPos) {
@@ -35,6 +53,8 @@ $(window).on('load',function(){
 			$mainNav.css("display", "none");
 			$main.css("margin-top", "0");
 		}
+// console.log(windowW);	
+// console.log(mNavCss);	
 	});
 
 	/**
