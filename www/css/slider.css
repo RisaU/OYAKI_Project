@@ -104,9 +104,26 @@
 
 	/* for mobile */
 	@media screen and (max-width: 480px) { 
-
-
-
+		#slider_wrap {
+			padding: 10px;
+		}
+		/* slider 画像 */
+		#photo_list li	{ 
+			width: 100px;
+		}
+		#slider_prev,
+		#slider_next,
+		#slider_prev img,
+		#slider_next img {
+			width: 30px;
+			height: 30px;
+		}
+		#slider_prev {
+		    left: -1%;
+		}
+		#slider_next {
+			right: -1%;
+		}
 	}
 
 
