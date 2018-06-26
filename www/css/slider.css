@@ -10,18 +10,29 @@
 	padding: 20px;
 	/* background:#efefef;*/
 	position: relative;
-	border: 1px solid #ccc;
+	/* border: 1px solid #ccc; */
 }
+#slider_prev,
+#slider_next {
+	opacity: 0.3;
+	width: 50px;
+	height: 50px;
+}
+#slider_prev:hover,
+#slider_next:hover {
+	opacity: 1;
+}
+
 #slider_prev {
 	position: absolute;
-	top: 170px;
-	left: -10px;
+	top: 45%;
+	left: -5%;
 	cursor: pointer;
 }
 #slider_next {
 	position: absolute;
-	top: 170px;
-	right: -10px;
+	top: 45%;
+	right: -5%;
 	cursor: pointer;
 }
 #slider {
@@ -30,7 +41,9 @@
 	overflow: hidden;
 }
 #photo_list {
-	height: 300px;
+	width: 100%;
+	height: auto;
+	max-height: 300px;
 	padding: 20px 10px;
 	list-style-type: none;
 	float: left;
@@ -41,6 +54,27 @@
 	margin: 0 10px;
 	display: inline;
 }
+.sliderItem {
+	position: relative;
+}
+
+/*文字を画像の中心に配置 */
+.sliderItem .itemName {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+	transform: translate(-50%,-50%);
+	margin: 0;
+	padding: 0;
+	font-size: 250%;
+	color: #FFF;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px #710000,
+		-2px 2px 1px #710000,
+		2px -2px 1px #710000,
+		-2px -2px 1px #710000;
+}
+
 #photo_list img {
 	border: none;
 	border-radius: 50%;
@@ -48,19 +82,32 @@
 	max-width: 300px;
 	height: auto;
 }
-#stop {
-	cursor: pointer;
-	background: #666;
-	color: #fff;
-	border: 1px solid #999;
-	width: 50px;
-	height: 2em;
-	text-align: center;
-	line-height: 2em;
-	margin-left: 40px;
-}
+
+	/* for タブレット */
+	@media screen and (max-width: 768px) {
+		/* slider 画像 */
+		#photo_list li	{ 
+			width: 135px;
+		}
+		#photo_list img	{ 
+
+		}
+		/* slider 文字 */
+		.sliderItem .itemName {
+			font-size: 150%;
+		}
+		#slider_prev,
+		#slider_next {
+			top: 40%;
+		}
+	}
+
+	/* for mobile */
+	@media screen and (max-width: 480px) { 
 
 
+
+	}
 
 
 

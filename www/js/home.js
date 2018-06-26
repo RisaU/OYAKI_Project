@@ -14,6 +14,7 @@ $(window).on('load',function(){
 	var mNavCss;
 
 	if (getDevice == "other" || getDevice == "tab") {
+		// if (getDevice == "tab") {
 		mNavCss = {
 			"display": "flex",
 			"flex-direction": "row"
@@ -37,9 +38,10 @@ $(window).on('load',function(){
 	});
 
 	/**
-	* http://yurixxx8.hatenablog.com/entry/2017/02/05/022049
-	* プラグインなしで拡大しながらフェードで切り替わるスライド
-	*/
+	 * Hero Image
+	 * http://yurixxx8.hatenablog.com/entry/2017/02/05/022049
+	 * プラグインなしで拡大しながらフェードで切り替わるスライド
+	 */
 		var slideFlag = 0;
 		var slide = $(".slideshow");
 		var i = 0;
