@@ -9,7 +9,7 @@ $(window).on('load',function(){
 	var $nav = $("#hContentNav");
 	var navPos = $nav.offset().top;
 	var $mainNav = $(".mainNav");
-	var mNavHeight = $mainNav.outerHeight();
+	// var mNavHeight = $mainNav.outerHeight();
 	var fixedClass = "is-fixed";
 	var mNavCss;
 	var tabletW = "768";
@@ -18,31 +18,34 @@ $(window).on('load',function(){
 	
 	$win.on("load scroll resize", function() {
 		windowW = $win.outerWidth();	
-		// if (getDevice == "sp" || getDevice == "tab") 
-		if (windowW < tabletW) {
-			// for tablet, mobile
-			mNavCss = {
-				"display": "block"
-			}	
-		} else {
-			// for desktop
-			mNavCss = {
-				"display": "flex",
-				"flex-direction": "row"
-			}	
-		}
-		$mainNav.css(mNavCss);
 		
-		var value = $(this).scrollTop();
-		
-		if (value > navPos) {
-			$mainNav.addClass(fixedClass);
+			// if (getDevice == "sp" || getDevice == "tab") 
+			if (windowW < tabletW) {
+				// for tablet, mobile
+				mNavCss = {
+					"display": "block"
+				}	
+			} else {
+				// for desktop
+				mNavCss = {
+					"display": "flex",
+					"flex-direction": "row"
+				}	
+			}
 			$mainNav.css(mNavCss);
-			$main.css("margin-top", mNavHeight);
-		} else {
-			$mainNav.removeClass(fixedClass);
-			$mainNav.css("display", "none");
-			$main.css("margin-top", "0");
+
+		if (windowW > tabletW) {	
+			var value = $(this).scrollTop();
+			
+			if (value > navPos) {
+				$mainNav.addClass(fixedClass);
+				$mainNav.css(mNavCss);
+				// $main.css("margin-top", mNavHeight);
+			} else {
+				$mainNav.removeClass(fixedClass);
+				$mainNav.css("display", "none");
+				// $main.css("margin-top", "0");
+			}
 		}
 // console.log(windowW);	
 // console.log(mNavCss);	

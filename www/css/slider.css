@@ -14,13 +14,13 @@
 }
 #slider_prev,
 #slider_next {
-	opacity: 0.3;
+	opacity: 0.1;
 	width: 50px;
 	height: 50px;
 }
 #slider_prev:hover,
 #slider_next:hover {
-	opacity: 1;
+	opacity: 0.8;
 }
 
 #slider_prev {
@@ -57,6 +57,34 @@
 .sliderItem {
 	position: relative;
 }
+
+/**
+ * アイコン
+ * https://www.e-sanwa.co.jp/sbs/column/20171215/
+ */
+
+.new_icon:after {
+	position: absolute;
+	content: "new";
+	top: 10px;
+	left: 20px;
+	background: #31ffe3;
+	border-radius: 50%;
+	color: #fff;
+	padding: 15px 12px;
+}
+.limited_icon:after {
+	position: absolute;
+	content: "limited";
+	top: 10px;
+	left: 20px;
+	background: #ff609a;
+	border-radius: 50%;
+	color: #fff;
+	padding: 15px 5px;	
+}
+
+
 
 /*文字を画像の中心に配置 */
 .sliderItem .itemName {
@@ -100,6 +128,20 @@
 		#slider_next {
 			top: 40%;
 		}
+		/* アイコン */
+		.new_icon:after {
+			font-size: 80%;
+			top: -4px;
+			left: 4px;
+			padding: 6px 5px;
+		}
+		.limited_icon:after {
+			font-size: 80%;
+			top: -8px;
+			left: -8px;
+			padding: 10px 5px;
+		}
+		
 	}
 
 	/* for mobile */
@@ -119,10 +161,23 @@
 			height: 30px;
 		}
 		#slider_prev {
-		    left: -1%;
+		    left: -5%;
 		}
 		#slider_next {
-			right: -1%;
+			right: -7%;
+		}
+		/* アイコン */
+		.new_icon:after {
+			font-size: 60%;
+			top: -4px;
+			left: 4px;
+			padding: 2px 4px;
+		}
+		.limited_icon:after {
+			font-size: 60%;
+			top: -8px;
+			left: -8px;
+			padding: 4px 3px;
 		}
 	}
 

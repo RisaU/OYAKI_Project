@@ -1,0 +1,54 @@
+/* simple reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+/**
+ * ホバー時にエフェクト
+ * 15. Circle
+ * https://www.nxworld.net/tips/css-image-hover-effects.html
+ * use: add class "hoverCircle" to am item
+*/
+
+#sampleCircle {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+.hoverCircle {
+	position: relative;
+	overflow: hidden;
+}
+.hoverCircle::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	background: #f19c4121;
+	border-radius: 100%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.hoverCircle:hover::before {
+	animation: circle 0.75s;
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}

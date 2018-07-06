@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/slider.css">
 <link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="./css/hover.css">
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Permanent+Marker" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -70,9 +71,9 @@
                     <li><a href="contact.html">CONTACT</a></li>
                     <li><a href="underConstruction.html">BLOG</a></li>
                     <li>
-                        <a href="http://facebook.com/" target="_blank"><img src="images/icon_Facebook.png" width="25" height="25" alt="Facebook"></a>
-                        <a href="http://instagram.com/" target="_blank"><img src="images/icon_Instagram.png" width="25" height="25" alt="Instagram"></a>
-                        <a href="http://youtube.com/" target="_blank"><img src="images/icon_Youtube.png" width="25" height="25" alt="Youtube"></a>
+                        <a href="http://facebook.com/" target="_blank"><img src="images/icon_Facebook.png" width="35" height="35" alt="Facebook"></a>
+                        <a href="http://instagram.com/" target="_blank"><img src="images/icon_Instagram.png" width="35" height="35" alt="Instagram"></a>
+                        <a href="http://youtube.com/" target="_blank"><img src="images/icon_Youtube.png" width="38" height="38" alt="Youtube"></a>
                     </li>
                </ul>
             </nav>
@@ -83,21 +84,16 @@
             <div class="item" id="slideItem3"></div>
         </div><!--  slideshow -->
     </div><!-- wrap -->
-
-	
-	
-	
-	
 </header>
 <main>
-<div class="callToAction fadein">
-	<section class="ship">
+<div class="callToAction fadein flex-container row-2">
+	<section class="ship col-item item-1">
 		<a href="#">
 			<p>We can ship anyehere all over the world</p>
 			<p class="btnMore">More detail</p>
 		</a>
 	</section>
-	<section class="shopArea">
+	<section class="shopArea col-item item-2">
 		<a href="#">
 			<p>Where can I get an OYAKI?</p>
 			<p class="btnMore">More detail</p>
@@ -113,11 +109,11 @@
 		<div id="slider">
 			<div id="slider_inner">
 				<ul id="photo_list">
-					<li class="sliderItem" id="">
+					<li class="sliderItem new_icon" id="">
 						<a href="#menu"><img src="./images/s_chicken_300.JPG" alt="chicken oyaki"></a>
 						<p class="itemName">Chicken</p>
 					</li>
-					<li class="sliderItem">
+					<li class="sliderItem limited_icon">
 						<a href="#menu"><img src="./images/s_eggplant_300.JPG" alt="eggplant oyaki"></a>
 						<p class="itemName">Eggplant</p>
 					</li>
@@ -145,40 +141,125 @@
 </section>
 <section class="mainContents fadein" id="about">
 	<h2>The reason for peace of mind</h2>
-	<p>Bonbon brownie marzipan. Cake chocolate bar toffee caramels chocolate bar liquorice chupa chups cheesecake jelly-o. Jujubes apple pie muffin.</p>
-	<p>Croissant croissant croissant lemon drops sweet roll donut soufflé. Candy sesame snaps icing tootsie roll. Cookie jujubes oat cake. Jelly-o dragée bonbon chupa chups cupcake chocolate.</p>
-	<a href="#" class="btnMore">More detail</a>
+	<div class="text">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		</p>
+		<p>
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<a href="#" class="btnMore">More detail</a>
+	</div><!-- text -->
 </section>
 
-<section class="mainContents" id="newInfo">
+<section class="mainContents fadein" id="newInfo">
 	<h2>What&rsquo;s new</h2>
-	<div id="infoContents">
-		<div class="b-2" id="newsInfo">
-			<h3>News</h3>
-			<ul>
-				<li class="b-3"><a href="#">hoge</a></li>
-				<li class="b-3"><a href="#">fuga</a></li>
-				<li class="b-3"><a href="#">moga</a></li>
-			</ul>
-		</div><!-- newsInfo -->
-		<div class="b-2" id="menuInfo">
-			<h3>Menu</h3>
-			<ul>
-				<li class="b-3"><a href="#">hoge</a></li>
-				<li class="b-3"><a href="#">fuga</a></li>
-				<li class="b-3"><a href="#">moga</a></li>
-			</ul>
-		</div>
-		<div class="b-2" id="eventInfo">
-			<h3>Event</h3>
-			<ul>
-				<li class="b-3"><a href="#">hoge</a></li>
-				<li class="b-3"><a href="#">fuga</a></li>
-				<li class="b-3"><a href="#">moga</a></li>
-			</ul>
-		</div>
-	</div><!-- infoContents -->
+	<div class="text">
+		<div class="flex-container row-3">
+			<div class="col-item item-1">
+				<h3><span>News</span></h3>
+				<ul>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_news_1.jpg">
+							<div class="newsText">
+								<h4>02, 07, 2018</h4>
+								<p>Updated the homepage</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_news_2.jpg">
+							<div class="newsText">
+								<h4>03, 06, 2018</h4>
+								<p>Gift for mon</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_news_3.jpg">
+							<div class="newsText">
+								<h4>21, 06, 2018</h4>
+								<p>We will be in the catalog</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-item item-2">
+				<h3><span>Menu</span></h3>
+				<ul>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_menu_1.jpg">
+							<div class="newsText">
+								<h4>21, 07, 2018</h4>
+								<p>New item's coming soon!</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_menu_2.jpg">
+							<div class="newsText">
+								<h4>28, 06, 2018</h4>
+								<p>Have you tried the our new menu?</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_menu_3.jpg">
+							<div class="newsText">
+								<h4>21, 05, 2018</h4>
+								<p>This product is for a limited time only!</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-item item-3">
+				<h3><span>Events</span></h3>
+				<ul>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_event_1.jpg">
+							<div class="newsText">
+								<h4>14, 06, 2018</h4>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_event_2.jpg">
+							<div class="newsText">
+								<h4>21, 07, 2017</h4>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="newsItem hoverCircle">
+							<img src="./images/newsItems_event_3.jpg">
+							<div class="newsText">
+								<h4>21, 07, 2016</h4>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- row-3 -->
+	</div>
 </section>
 </main>
+<footer>
+  <address>Copyright(C)2018 OYAKI, Allright Reserved.</address>
+</footer>
 </body>
 </html>

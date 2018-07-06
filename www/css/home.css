@@ -1,12 +1,48 @@
-.mainNav {
-	/* display: none; */
+/*only for top page */
+#home .mainNav {
+	display: none;
 }
+/**
+ * for Desktop PC
+ */
+	@media screen and (min-width: 768px) {
+		.mainNav {
+			/* display: flex; */
+			/* flex-direction: row; */
+		}
+		.navbar_toggle {
+			display: none;
+		}
+		.mainNav .menu {
+			width: 100%;
+			transform: translateX(0);
+			margin: auto;
+		}
+		.mainNav .menu ul {
+			height: 70px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			align-items: center;
+		}
+		.mainNav .menu ul li {
+			padding: 0 1em;
+			border-bottom: none;
+		}
+		.mainNav .menu ul li a {
+			color: #000;
+		}
+
+	}
+
 	@media screen and (max-width: 900px) {
 		.Chewy a {
 			font-size: 180%;
 		}	
 	}
 
+	
+	
 /**
  * for タブレット
  * Show up Hamburger Menu (SCREEN < 768px)
@@ -23,9 +59,16 @@
 		#hContentNav {
 			display: none;
 		}
-		/* .mainNav { */
-			/* display: flex; */
-		/* } */
+		.mainNav {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 4;
+			width: 100%;
+			
+		}
+		
 	}
 		/* for mobile */
 	@media screen and (max-width: 480px) {
