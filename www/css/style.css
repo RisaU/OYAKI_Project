@@ -213,7 +213,7 @@ a:hover {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 4;
+	z-index: 100;
 	width: 100%;
 }
 
@@ -277,7 +277,7 @@ a:hover {
 
 /* about */
 #about {
-	background: url("../images/bg_about.jpg") repeat-x left top;
+	/* background: url("../images/bg_about.jpg") repeat-x left top; */
 }
 #about .btnMore {
 	display: inline-block;

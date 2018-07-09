@@ -79,10 +79,17 @@ a:hover {
 
 /**
 * function 
+* 手書きのような枠線
 */
 .scrollin {
 	opacity: 1;
 	transform: translate(0, 0);
+}
+#infoContents div {
+	margin-bottom: 30px;
+}
+ul li {
+	margin: 10px 50px;
 }
 
 /* freehand border line */
@@ -96,3 +103,57 @@ a:hover {
 	border-width: 3px!important;
 	border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
 }
+/**
+* function
+* パララックス効果 
+* https://saruwakakun.com/html-css/reference/parallax
+*/
+
+#testParallax {
+	height: 500px;
+}
+
+.parallax {
+	position: relative;
+	background: url(./../images/parallax.jpg);
+	height: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.parallax h2 {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	top: 20%;
+}
+.contents {
+	position: relative;
+	z-index: 1;
+	height: 500px;
+	background: #555;
+	font-size: 60px;
+	background: #f89174;
+	padding: 100px 20px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
