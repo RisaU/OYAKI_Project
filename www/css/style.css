@@ -121,10 +121,6 @@ a:hover {
 	top: 0;
 	left: 0;
 	z-index: 5;
-	background-color: rgba(255, 255, 255, 1);
-	box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.6);
-	/* overflow: hidden; */
-	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 
 }
 .mainNav .menu {
@@ -148,10 +144,14 @@ a:hover {
  */
 .mainNav, .drawer, .drawer img,
 .mainNav .menu ul li a {
-	transition: 0.3s;	
+	transition: 1s;	
 }
 .is-navFixed {
 	height: 100px;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.6);
+	/* overflow: hidden; */
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 .is-navFixed .drawer {
 	height: 100px;
