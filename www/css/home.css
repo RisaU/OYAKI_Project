@@ -1,7 +1,4 @@
 /*only for top page */
-#home .mainNav {
-	display: none;
-}
 /**
  * for Desktop PC
  */
@@ -28,9 +25,6 @@
 		.mainNav .menu ul li {
 			padding: 0 1em;
 			border-bottom: none;
-		}
-		.mainNav .menu ul li a {
-			color: #000;
 		}
 
 	}

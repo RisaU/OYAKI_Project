@@ -1,57 +1,5 @@
 $(window).on('load',function(){
 	/**
-	 * 固定ナビゲーション
-	 * 1. ナビゲーションが途中から固定
-	 * https://www.nxworld.net/tips/stikcy-or-change-header-and-navigation-when-scrolling-using-jquery.html
-	 */
-	var $win = $(window);
-	var $main = $("main");
-	var $nav = $("#hContentNav");
-	var navPos = $nav.offset().top;
-	var $mainNav = $(".mainNav");
-	// var mNavHeight = $mainNav.outerHeight();
-	var fixedClass = "is-fixed";
-	var mNavCss;
-	var tabletW = "768";
-	var mobileW = "460";
-	var windowW;
-	
-	$win.on("load scroll resize", function() {
-		windowW = $win.outerWidth();	
-		
-			// if (getDevice == "sp" || getDevice == "tab") 
-			if (windowW < tabletW) {
-				// for tablet, mobile
-				mNavCss = {
-					"display": "block"
-				}	
-			} else {
-				// for desktop
-				mNavCss = {
-					"display": "flex",
-					"flex-direction": "row"
-				}	
-			}
-			$mainNav.css(mNavCss);
-
-		if (windowW > tabletW) {	
-			var value = $(this).scrollTop();
-			
-			if (value > navPos) {
-				$mainNav.addClass(fixedClass);
-				$mainNav.css(mNavCss);
-				// $main.css("margin-top", mNavHeight);
-			} else {
-				$mainNav.removeClass(fixedClass);
-				$mainNav.css("display", "none");
-				// $main.css("margin-top", "0");
-			}
-		}
-// console.log(windowW);	
-// console.log(mNavCss);	
-	});
-
-	/**
 	 * Hero Image
 	 * http://yurixxx8.hatenablog.com/entry/2017/02/05/022049
 	 * プラグインなしで拡大しながらフェードで切り替わるスライド

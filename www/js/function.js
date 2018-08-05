@@ -14,6 +14,28 @@
 	})();
 // console.log("Device: " + getDevice);	
 
+/**
+ * 固定ナビゲーション
+ * 3. スクロールでヘッダーサイズを変更
+ * https://www.nxworld.net/tips/stikcy-or-change-header-and-navigation-when-scrolling-using-jquery.html
+ */
+$(function() {
+	var $win = $(window);
+	var $nav = $(".mainNav");
+	animationClass = "is-navFixed";
+
+	$win.on("load scroll", function() {
+		var value = $(this).scrollTop();
+		if (value > 100) {
+			$nav.addClass(animationClass);
+		} else {
+			$nav.removeClass(animationClass);
+		}
+	});
+});
+
+
+
 // load: 画像などのデータ全ての読み込みが完了したら実行
 $(window).on('load',function(){	
 	// Drawer Menu(Hamburger Menu)
