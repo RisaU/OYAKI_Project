@@ -28,6 +28,15 @@ dl,dt,dd {
 input, textarea {
 	border: 1px solid #000;
 }
+.mainContents {
+	margin-top: 150px;
+}
+#contact .mainNav {
+	background: #fff;
+}
+#contact h2 {
+	padding: 25px 0 10px;
+}
 #contact dl {
 	overflow: hidden;
 	width: 100%;
