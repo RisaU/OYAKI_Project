@@ -116,51 +116,12 @@ a:hover {
  */
 .mainNav {
 	width: 100%;
-	height: 150px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10;
-
-}
-.mainNav .menu {
-	/* transform: scale(0) translateX(100%); */
-	transform: translateX(-100%);
-	transition: 0.5s ease-in;
-	z-index: 1000;
-
-}
-.mainNav .menu ul li {
-	padding: 1.5em;
-	border-bottom: 1px solid #ccc;
-	text-align: center;
-}
-.mainNav .menu ul li a {
-	color: #000;
-	font-size: 250%;
-}
-/* 
- * スクロール後のナビゲーションの挙動
- */
-.mainNav, .drawer, .drawer img,
-.mainNav .menu ul li a {
-	transition: 1s;	
-}
-.is-navFixed {
 	height: 100px;
+	position: relative;
 	background-color: rgba(255, 255, 255, 1);
 	box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.6);
 	/* overflow: hidden; */
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-}
-.is-navFixed .drawer {
-	height: 100px;
-}
-.is-navFixed .drawer img {
-	width: 90px;
-}
-.is-navFixed.mainNav .menu ul li a {
-	font-size: 200%;
 }
 .drawer {
 	display: flex;
@@ -168,18 +129,17 @@ a:hover {
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	height: 150px;
+	height: 100px;
 	padding: 0 1em;
 } 
 .drawer a {
 	margin: auto;
 }
 .drawer img {
-	width: 100px;
+	width: 90px;
 	height: auto; 
 	margin: 5px auto;
 }
-
 /* Hamburger */
 .nav-bar_toggle {
 	z-index: 9999;
@@ -221,7 +181,26 @@ a:hover {
 .navbar_toggle.open span:nth-child(3) {
 	transform: translateY(-12.5px) rotate(45deg);
 }
+/* Navigation */ 
+.mainNav {
 
+}
+.mainNav .menu {
+	/* transform: scale(0) translateX(100%); */
+	transform: translateX(-100%);
+	transition: 0.5s ease-in;
+	z-index: 1000;
+
+}
+.mainNav .menu ul li {
+	padding: 1.5em;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+.mainNav .menu ul li a {
+	color: #fff;
+	text-decoration: none;
+}
 /* OPEN時の動き */
 .mainNav .menu.open {
 	/* transform: scale(1) translateX(0); */
@@ -229,6 +208,16 @@ a:hover {
 	overflow-y: auto;/* only for IE */
 	background: rgba(0, 0, 0, 0.7);
 }
+/* navがスクロールして特定のポイントで固定表示 */
+.is-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+}
+
+
 /**
 * main content
 */
@@ -237,23 +226,7 @@ a:hover {
 	height: auto;
 	/* border: 1px solid red; for debug */
 	padding: 2% 5%;
-	margin-top: 100px;
 }
-.mainContents h2 {
-    line-height: 1.5;
-    margin: 20px 0;
-    border-bottom: solid 3px #e3e3e3;
-    position: relative;
-}
-.mainContents h2:after {
-	position: absolute;
-	content: "";
-	display: block;
-	border-bottom: solid 3px #795548;
-	bottom: -3px;
-	width: 10%;
-}
-
 .mainContents p {
 	font-size: 110%;
 	line-height: 150%;

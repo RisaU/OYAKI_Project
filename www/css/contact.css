@@ -29,7 +29,7 @@ input, textarea {
 	border: 1px solid #000;
 }
 .mainContents {
-	margin-top: 150px;
+	/* margin-top: 150px; */
 }
 #contact .mainNav {
 	background: #fff;
@@ -142,25 +142,22 @@ input, textarea {
 * ref: https://www.sejuku.net/blog/28217
 */
 .dialog {
-	width: 60%;
-	max-width: 900px;
-	margin: auto;
-	margin-top: 40vh;
-	text-align: center;
-	border: 1px solid #aaa;
-	box-shadow: 2px 2px 4px #888;
-	background-color: white;
-	z-index: 10;
-	
-	/* hidden firstly */
-	display: none;
-	/* display on front of window */
-	position: fixed;
-	top: -25%;
-    left: 25%;
+	width: 80%;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 4px #888;
+    background-color: white;
+    z-index: 10;
+    display: none;
+    position: fixed;
+    top: -25%;
+    left: 10%;
 }
 .dialog h3 {
-	font-size: 150%;
+	font-size: 140%;
 	color: white;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1),
                -1px -1px 1px rgba(255, 255, 255, .7);
@@ -171,7 +168,7 @@ input, textarea {
 /* contents */
 #contactFormDialog dl {
 	width: 80%;
-	padding: 5% 10%;
+	padding: 2% 10%;
 	text-align: left;
 	overflow: hidden;
 }
@@ -184,12 +181,12 @@ input, textarea {
 .dialog button {
 	cursor: pointer;
 	letter-spacing: 2px;
-	padding: 10px;
+	padding: 8px;
 	margin: 0 3% 5% 3%;
 	background-color: #642200;
 	border: 0;
 	border-radius: 5px;
-	font-size: 130%;
+	font-size: 120%;
 	color: white;
 }
 .dialog button:hover {

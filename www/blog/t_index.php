@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja"><!-- language -->
+<html>
 <head>
 <meta charset="utf-8"><!-- encode -->
 <!-- <link rel="shortcut icon" href="favicon.ico"> --><!-- ファビコン -->
@@ -17,9 +17,10 @@
 <meta name = "ROBOTS" content = "NONE">
 <meta name = "ROBOTS" content = "NOINDEX,NOFOLLOW">
 <!-- css -->
-<link rel="stylesheet" href="./css/reset.css">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/underConstruction.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/blog.css">
+
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Permanent+Marker" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -27,17 +28,16 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <!-- js -->
-<script src="./js/jquery-3.2.1.min.js"></script><!-- jQuery本体 -->
-<script src="./js/function.js"></script>
-<script src="./js/thankyou.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script><!-- jQuery本体 -->
+<script src="../js/function.js"></script>
 <script>
 </script>
 </head>
-<body id="thankyou">
+<body id="blog">
 <header>
 	<nav class="mainNav">
 		<div class="drawer">
-			<a class="navbar_brand" href="index.html"><img src="./images/logo.png" alt="logo"></a>
+			<a class="navbar_brand" href="../index.html"><img src="../images/logo.png" alt="logo"></a>
 			<div class="navbar_toggle">
 				<span></span>
 				<span></span>
@@ -46,25 +46,40 @@
 		</div><!-- drawer -->
 		<div id="" class="menu">
 			<ul class="Chewy">
-				<li><a href="index.html" id="current-page">HOME</a></li>
-				<li><a href="about.html">ABOUT</a></li>
-				<li><a href="underConstruction.html">MENU</a></li>
-				<li><a href="contact.html">CONTACT</a></li>
-				<li><a href="./blog/">BLOG</a></li>
+				<li><a href="../index.html" id="current-page">HOME</a></li>
+				<li><a href="../about.html">ABOUT</a></li>
+				<li><a href="../underConstruction.html">MENU</a></li>
+				<li><a href="../contact.html">CONTACT</a></li>
+				<li><a href="./index.php">BLOG</a></li>
 			</ul>
 		</div><!-- menu -->
 	</nav><!-- mainNav -->
 </header>
 <main>
-<!-- 
-<section class="mainContents" id="thanks">
-	<h2>Thank you</h2>
-	<p>Your form was submitted Successfully!</p>
-</section>
--->
-<div id="cvsContainer">
-	<canvas id="cvs"></canvas>
-</div>
+  <section class="mainContents">
+    <!-- <h1>Blog</h1> -->
+    <?php  foreach($posts as $post) { ?>
+      <div class="post">
+        <h2><?php echo $post['title'] ?></h2>
+        <time id="uploadtime" datetime="2008-02-14 20:00">
+          <span>Date: </span>
+          2008-02-14
+        </time>
+        <div id="theme">Theme: <a href="#">blog</a></div>
+        <div id="blogtext"><?php echo nl2br($post['content']) ?></div>
+        <?php foreach($post['comments'] as $comment) { ?>
+          <div class='comment'>
+            <h3><?php echo $comment['name'] ?></h3>
+            <p><?php echo nl2br($comment['content']) ?></p>
+          </div>
+        <?php } ?>
+        <p class="comment_link">
+          Post date: <?php echo $post['time'] ?>
+          <a href="comment.php?no=<?php echo $post['no'] ?>">Comment</a>
+        </p>
+      </div><!-- post -->
+      <?php } ?>
+      </section>
 </main>
 </body>
 </html>

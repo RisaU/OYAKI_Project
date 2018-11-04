@@ -41,7 +41,7 @@
 	overflow: hidden;
 }
 #photo_list {
-	width: 100%;
+	/* width: 100%; */
 	height: auto;
 	max-height: 300px;
 	padding: 20px 10px;
