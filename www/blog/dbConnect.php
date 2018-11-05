@@ -6,10 +6,11 @@ class dbConnect {
   const DB_NAME = "oyaki";
   const DB_USER = "root";
   const DB_PASSWORD = "";
+  private $db;
 
   public function __construct()
   {
-    $this->pdo();
+    $this-> $db = $this->pdo();
   }
   public function pdo () {
 
@@ -23,18 +24,42 @@ class dbConnect {
   
     // connect DB
     try {
-      $db = new PDO(
+      $pdo = new PDO(
         'mysql:host=' . self::DB_HOST . ';dbname=' . self::DB_NAME, self::DB_USER, self::DB_PASSWORD, $options
       );
       // throw an error
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
       echo 'Error: ' . $e->getMessage() . "<br>";
       die();
     }
+    return $pdo;
+  }
 
+  public function select($sql) 
+  {
+    $stmt = $this->$db->query($sql);
+    $items = $stmt->fetchAll(PDO::FETCH_ASSOC);// 連想配列
+
+    return $items;
+  }
+
+  // SELECT, INSERT, UPDATE, DELETE
+  public function plural($sql, $item = null)
+  {
+    $stmt = $this->$db->prepare($sql);
+
+    if (empty($item)) {
+      $res = $stmt->execute();
+    } else {
+      $res = $stmt->execute(array(':id'=>$item));
+    }
+     return $res;
   }
 
 }
+
+
+
 
 ?>
