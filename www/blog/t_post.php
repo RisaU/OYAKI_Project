@@ -69,9 +69,9 @@
         <?php echo $content ?></textarea>
       </p>
       <p class="submit">
-        <input type="submit" name="dubmit" id="submitBtn" value="post">
+        <input type="submit" name="submit" id="submitBtn" value="post">
       </p>
-      <p><?php echo $erro ?></p>
+      <p><?php echo $error ?></p>
     </section><!-- post -->
   </form>
 </main>
