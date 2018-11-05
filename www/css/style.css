@@ -91,7 +91,8 @@ a:hover {
     z-index: 1;
 }
 .wrap {
-    position: relative;
+		position: relative;
+		margin-top: 50px;
 }
 #hContent {
     width: 60vw;
@@ -121,6 +122,7 @@ a:hover {
 	top: 0;
 	left: 0;
 	z-index: 10;
+	background-color: white;
 
 }
 .mainNav .menu {
