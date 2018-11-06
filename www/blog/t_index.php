@@ -57,15 +57,29 @@
 </header>
 <main>
   <section class="mainContents">
+    <!-- arrow Botton -->
+    <div class="btnSection">
+      <div class="basicBtn" id="prev">
+        <a href="./index.php?page=<?php echo($page - 1); ?>">&lt;&nbsp;Prev</a>
+      </div>
+      <div class="basicBtn" id="next">
+        <a href="./index.php?page=<?php echo($page + 1); ?>">Next&nbsp;&gt;</a>
+      </div>
+    </div><!-- btnSection -->
     <!-- <h1>Blog</h1> -->
     <?php  foreach($posts as $post) { ?>
       <div class="post">
         <h2><?php echo $post['title'] ?></h2>
-        <time id="uploadtime" datetime="2008-02-14 20:00">
+        <time id="uploadtime" datetime="<?php echo $post['post_date']?>">
           <span>Date: </span>
-          2008-02-14
+          <?php echo $post['post_date']?>
         </time>
-        <div id="theme">Theme: <a href="#">blog</a></div>
+        <div id="theme">Theme: <a href="#"><?php echo $post["category"] ?></a></div>
+        <?php if($post['img_src']) { ?>
+          <div id="headerImg">
+            <img src=<?php echo $post['img_src'] ?> width="500" height="400">
+          </div>
+        <?php } ?>
         <div id="blogtext"><?php echo nl2br($post['content']) ?></div>
         <?php foreach($post['comments'] as $comment) { ?>
           <div class='comment'>
@@ -75,11 +89,21 @@
         <?php } ?>
         <p class="comment_link">
           Post date: <?php echo $post['time'] ?>
-          <a href="comment.php?no=<?php echo $post['no'] ?>">Comment</a>
+          <a href="comment.php?id=<?php echo $post['id'] ?>">Comment</a>
         </p>
       </div><!-- post -->
       <?php } ?>
-      </section>
-</main>
+      <!-- arrow Botton -->
+      <div class="btnSection">
+            <div class="basicBtn" id="prev">
+              <a href="./index.php?page=<?php echo($page - 1); ?>">&lt;&nbsp; Prev</a>
+            </div>
+            <div class="basicBtn" id="next">
+              <a href="./index.php?page=<?php echo($page + 1); ?>">Next &nbsp;&gt;</a>
+          </div>
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>

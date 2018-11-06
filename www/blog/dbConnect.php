@@ -10,7 +10,7 @@ class dbConnect {
 
   public function __construct()
   {
-    $this-> $db = $this->pdo();
+    $this->db = $this->pdo();
   }
   public function pdo () {
 
@@ -38,7 +38,7 @@ class dbConnect {
 
   public function select($sql) 
   {
-    $stmt = $this->$db->query($sql);
+    $stmt = $this->db->query($sql);
     $items = $stmt->fetchAll(PDO::FETCH_ASSOC);// 連想配列
 
     return $items;
@@ -47,7 +47,7 @@ class dbConnect {
   // SELECT, INSERT, UPDATE, DELETE
   public function plural($sql, $item = null)
   {
-    $stmt = $this->$db->prepare($sql);
+    $stmt = $this->db->prepare($sql);
 
     if (empty($item)) {
       $res = $stmt->execute();
@@ -56,6 +56,15 @@ class dbConnect {
     }
      return $res;
   }
+  // public function insert($items, $datas, $params) 
+  // {
+  //   $cnt = count($items);
+  //   for($i=0;$i<$cnt;$i++) {
+
+  //   }
+
+  //   }
+  // }
 
 }
 

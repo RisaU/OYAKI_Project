@@ -1,38 +1,39 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'oyaki');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
 
+require_once "dbConnect.php";
 
-$options = array(
-  // set UTF-8
-  PDO::MYSQL_ATTR_INIT_COMMAND=>"SET CHARACTER SET 'utf8'"
-);
-
-// display error msg(except for notice)
-error_reporting(E_ALL & ~E_NOTICE);
+//"SELECT * FROM oyaki.post WHERE no = (SELECT COUNT(no) FROM oyaki.post);"
+// show all pages
+// $sql = "SELECT * FROM post ORDER BY no DESC";
 
 // connect DB
-try {
-  $db = new PDO(
-    'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD, $options
-  );
-  // throw an error
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-  echo $e->getMessage() . "<br>";
-  exit;
-}
+$db = new dbConnect();
+$sql = "";
 
-$st = $db->query("SELECT * FROM post ORDER BY no DESC");
-$posts = $st->fetchAll();
+$res = $db->select("SELECT COUNT(id) as last_page FROM oyaki.post");
+$maxPage = $res[0]['last_page'];
+
+
+$page = $_REQUEST['page'];
+// if no request, show latest page
+if($page == "") {
+  $page = $maxPage;
+} 
+// if $page is less than 1, put 1 into $page
+$page = max($page, 1); // @memo shold change this later..
+
+// if request page is larger than max page, show latest page
+$page = min($page, $maxPage);
+
+
+
+
+$sql = "SELECT * FROM oyaki.post WHERE id = " . $page . ";";
+$posts = $db->select($sql);
 
 for($i=0; $i<count($posts); $i++) {
-  $st = $db->query(
-        "SELECT * FROM comment WHERE post_no={$posts[$i]['no']} ORDER BY no DESC"
-  );
-  $posts[$i]['comments'] = $st->fetchAll();
+  $sql = "SELECT * FROM comment WHERE post_id={$posts[$i]['id']} ORDER BY id DESC";
+  $posts[$i]['comments'] = $db->select($sql);
 }
 
 require_once 't_index.php';

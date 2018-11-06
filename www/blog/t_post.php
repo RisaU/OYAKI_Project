@@ -55,9 +55,10 @@
 	</nav><!-- mainNav -->
 </header>
 <main>
-  <form method="post" action="post.php">
+  <form method="post" action="post.php" enctype="multipart/form-data">
   <section class="mainContents">
       <h2>Add New Post</h2>
+      <p id="error"><?php echo $error ?></p>
       <h3>Title</h3>
       <p>
         <input type="text" name="title" size="40" 
@@ -68,10 +69,14 @@
         <textarea name="content" rows="8" cols="40">
         <?php echo $content ?></textarea>
       </p>
+      <p>
+        <input type="file" name="upfile">
+      </p>
+      <p>* Only JPG is allowed.</p>
       <p class="submit">
         <input type="submit" name="submit" id="submitBtn" value="post">
       </p>
-      <p><?php echo $error ?></p>
+      
     </section><!-- post -->
   </form>
 </main>

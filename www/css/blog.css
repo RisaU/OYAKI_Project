@@ -1,7 +1,11 @@
+.mainContents {
+  margin-top: 150px;
+}
+
 .post {
   border: solid 1px #ccc;
   padding: 0 30px 40px 30px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   box-shadow: 2px 2px 4px gray;
 }
 .post:first-child {
@@ -55,6 +59,7 @@ h2:after {
   line-height: 1.5;
 }
 #post input[type="text"], 
+#post input[type="file"], 
 #post textarea {
   width: 90%;
   background-color: #fff;
@@ -83,4 +88,31 @@ h2:after {
 }
 #post #submitBtn:hover {
   opacity: 0.8;
+}
+.btnSection {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 150%;
+  margin: 10px auto;
+} 
+.basicBtn {
+  /* display: inline-block; */
+  padding: 10px 50px;
+  height: 20px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background: #642200;
+  border: 0;
+  font-size: 130%;
+}
+#prev {
+  margin-right: 10px;
+}
+.basicBtn a {
+  /* font-size: 130%; */
+  color: #fff;
+}
+#error {
+  color: red;
 }
