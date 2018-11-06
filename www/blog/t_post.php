@@ -61,7 +61,7 @@
       <p id="error"><?php echo $error ?></p>
       <h3>Title</h3>
       <p>
-        <input type="text" name="title" size="40" 
+        <input type="text" name="title" size="40" autofocus
           value="<?php echo $title ?>">
       </p>
       <h3>Content</h3>

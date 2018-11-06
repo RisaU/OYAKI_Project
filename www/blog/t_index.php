@@ -57,6 +57,15 @@
 </header>
 <main>
   <section class="mainContents">
+  <div id="category">
+      <select name="category">
+        <?php foreach($categories as $category) { ?>
+        <option value="<?php echo $category['category']; ?>">
+          <?php echo $category['category']; ?>
+        </option>
+        <?php } ?>
+      </select>
+    </div><!-- category -->
     <!-- arrow Botton -->
     <div class="btnSection">
       <div class="basicBtn" id="prev">
@@ -66,6 +75,7 @@
         <a href="./index.php?page=<?php echo($page + 1); ?>">Next&nbsp;&gt;</a>
       </div>
     </div><!-- btnSection -->
+
     <!-- <h1>Blog</h1> -->
     <?php  foreach($posts as $post) { ?>
       <div class="post">

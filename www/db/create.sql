@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS comment(
 
 TRUNCATE TABLE post;
 INSERT INTO post(id, title, topic, category, img_src, content, post_date) VALUES
-(1, 'Updated the homepage', "", "blog", "./images/sample01.jpg",
+(1, 'Updated the homepage', "", "news", "./images/sample01.jpg",
 'Lorem ipsum dolor sit amet, mel viderer veritus et. 
 Id his ullum dicam adipisci, ei tritani apeirian his, singulis sadipscing sit eu. 
 Vocent gubergren ius eu, quo cetero feugait no, ius eu quaeque omittam iudicabit. 
@@ -34,6 +34,7 @@ Sit veritus persecuti at, id eum appetere urbanitas, at pro natum necessitatibus
 (2, 'Gift for mum!', "", "blog", "./images/sample02.jpg",
 'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.', "2018-06-03 00:00:00")
 ;
+
 
 INSERT INTO comment(id, post_id, name, content) VALUES
 (1, 1, 'Taro', 'This is a comment for article 1'),

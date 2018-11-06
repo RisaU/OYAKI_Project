@@ -25,8 +25,8 @@ $page = max($page, 1); // @memo shold change this later..
 // if request page is larger than max page, show latest page
 $page = min($page, $maxPage);
 
-
-
+$sql = "SELECT DISTINCT category FROM oyaki.post;";
+$categories = $db->select($sql);
 
 $sql = "SELECT * FROM oyaki.post WHERE id = " . $page . ";";
 $posts = $db->select($sql);
@@ -35,6 +35,8 @@ for($i=0; $i<count($posts); $i++) {
   $sql = "SELECT * FROM comment WHERE post_id={$posts[$i]['id']} ORDER BY id DESC";
   $posts[$i]['comments'] = $db->select($sql);
 }
+
+
 
 require_once 't_index.php';
 
