@@ -1,3 +1,12 @@
+body {
+      /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+}
+.menu a {
+  text-decoration: none;
+}
+/*
+* Single page
+*/
 .mainContents {
   margin-top: 150px;
 }
@@ -26,7 +35,7 @@ h2:after {
   width: 10%;
 
 }
-#theme {
+#category {
   margin: 10px 0;
   font-size: 110%;
 }
@@ -51,7 +60,64 @@ h2:after {
 #blog .comment_like {
     text-align: right;
 }
-/* Post 投稿ページ */
+#blog .post img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+#selectCategory {
+  width: 30%;
+  background-color: #fff;
+
+  padding: 0px;
+  margin: 10px;
+  font-size: 150%;
+  text-align: left;
+}
+#selectCategory .selectItem {
+  border: 1px solid #ccc; 
+  padding: 5px 10px;
+}
+/* 
+* Top page of Blog 
+*/ 
+#blogTop .mainContents {
+  margin: 0 auto;
+  margin-top: 150px;
+}
+#blogTop .post:first-child {
+  margin-top: 0;
+}
+#blogTop .post {
+  position: relative;
+  /* width: 100%; */
+}
+#blogTop .post img {
+  width: 98%;
+  max-width: 300px;
+  padding: 2%;
+  height: 300px;
+}
+.post .headerImg,
+#blogTop .post .headerImg {
+  text-align: center;
+}
+
+#blogTop .post h2 {
+  padding: 0;
+  /* max-height: 90px; */
+  height: 90px;
+}
+#blogTop .post h2 a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+
+/* 
+* Post 投稿ページ 
+*/
 #post h3 {
   margin: 0;
   padding: 10px;
@@ -91,13 +157,15 @@ h2:after {
 }
 .btnSection {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
   text-align: center;
   line-height: 150%;
   margin: 10px auto;
 } 
 .basicBtn {
   /* display: inline-block; */
+  margin-right: 10px;
   padding: 10px 50px;
   height: 20px;
   cursor: pointer;
@@ -107,7 +175,7 @@ h2:after {
   font-size: 130%;
 }
 #prev {
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 .basicBtn a {
   /* font-size: 130%; */
@@ -116,3 +184,39 @@ h2:after {
 #error {
   color: red;
 }
+@media screen and (max-width: 1300px) {
+  /* .mainContents {
+    padding: 0;
+    width: 100%;
+  } */
+  .mainContents {
+    width: auto;
+    height: auto;
+    /* padding: 0; */
+    padding: 2% 5%;
+    margin-top: 100px;
+  }
+  #blog .mainContents {
+    margin-top: 150px;   
+  }
+}
+
+
+		/* for mobile */
+    @media screen and (max-width: 480px) {
+      .basicBtn {
+        padding: 5px 10px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        background: #642200;
+        border: 0;
+        font-size: 90%;
+      }
+      #blogTop .post {
+        margin-top: 5px;
+      }
+      #blogTop .post h2 a {
+        font-size: 85%;
+      }
+
+    }

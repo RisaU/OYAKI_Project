@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <style>
+  .box {
+    width:30%;
+    padding:15px;
+    background-color:#f99;
+    border:1px solid #000;
+  }
+  </style>
+</head>
+<body>
+
+<div class="box link-box">
+  <h2>タイトルや</h2>
+  <p>内容テキストがあるブロック全体をリンク</p>
+  <a href="https://qiita.com/">詳しくはこちら</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+jQuery(function($) {
+  $('.link-box').css('cursor','pointer');
+  $('.link-box').on('click',function () {
+    window.location.href = $(this).find('a').attr('href');
+  });
+});
+</script>

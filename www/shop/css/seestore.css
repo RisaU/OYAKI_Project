@@ -1,0 +1,63 @@
+
+/* 表示・非表示を切り替える */
+.hidden_box {
+    margin: 5vh 10vw;
+    padding: 0;
+}
+.hidden_box label {
+    padding: 3px;
+    font-weight: bold;
+    font-size: 130%;
+    cursor: pointer;
+    display: inline-block;
+}
+.hidden_box label::after {
+    display: block;
+    content: "";
+    width: 0;
+    transition: 0.3s;
+    border-bottom: 2px solid #1f081b;
+}
+.hidden_box label:hover::after {
+    width: 100%;
+}
+.hidden_box .desc {
+    margin: 10px;
+}
+.hidden_box input {
+   display: none;
+}
+.hidden_box .hidden_show {
+    list-style: none;
+    height: 0;
+    margin-left: 10px;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .8s;
+}
+/* show up when clicked */
+.hidden_box input:checked ~ .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+.hidden_show li {
+    margin: 10px 0;
+}
+.hidden_show li a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    line-height: 160%;
+}
+.hidden_show li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    transition: 0.3s;
+    border-bottom: 2px solid #1f081b;
+}
+.hidden_show li a:hover::after {
+    width: 100%;
+}

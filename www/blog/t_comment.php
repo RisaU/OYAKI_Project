@@ -19,12 +19,7 @@
 <!-- css -->
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
-
-<!-- BootstrapのCSS読み込み -->
-<link href="./../js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
 <link rel="stylesheet" href="../css/blog.css">
-
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Permanent+Marker" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -32,23 +27,12 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <!-- js -->
-<!-- jQuery -->
-<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
-<script>
-  window.jQuery || document.write('<script type="text/javascript" src="../js/jquery-3.2.1.min.js"><\/script>');
-</script>
-<!-- Bootstrap -->
-<script src="./../js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-
+<script src="../js/jquery-3.2.1.min.js"></script><!-- jQuery本体 -->
 <script src="../js/function.js"></script>
-<script src="./ajax.js"></script>
-<!-- BootstrapのJS読み込み -->
-
-    <script>
-    </script>
+<script>
+</script>
 </head>
-<body id="blogTop">
-
+<body id="post">
 <header>
 	<nav class="mainNav">
 		<div class="drawer">
@@ -71,43 +55,24 @@
 	</nav><!-- mainNav -->
 </header>
 <main>
-  <section class="mainContents">
-    <div id="selectCategory">
-      <label for="category">Category:</label>
-      <select name="category" class="selectItem">
-        <option value="all">All</option>
-        <?php foreach($categories as $category) { ?>
-        <option value="<?php echo $category['category']; ?>">
-          <?php echo $category['category']; ?>
-        </option>
-        <?php } ?>
-      </select>
-    </div><!-- category -->
+<section class="mainContents">
+  <form method="post" action="comment.php">
+    <div class="post">
+      <h2>Add New Comment</h2>
+      <p>Name: </p>
+      <p><input type="text" name="name" size="40"  
+          value="<?php echo $name ?>"></p>
+      <p>Comment</p>
+      <p><textarea name="content" row="8" col="40">
+        <?php echo $content ?></textarea>
+      </p>
+      <input type="hidden" name="post_id"
+        value="<?php echo $post_id ?>">
 
-      <!-- <h1>Blog</h1> -->
-    <div class="container">
-      <div class="row">
-        <?php  foreach($posts as $post) { ?>
-          <div class="post col-xs-12 col-md-6 col-lg-4">
-            <?php if($post['img_src']) { ?>
-              <div class="headerImg">
-                <img src=<?php echo $post['img_src'] ?>>
-              </div>
-            <?php } ?>
-            <h2>
-              <a href="single.php?page=<?php echo $post['id']?>"><?php echo $post['title'] ?></a>
-            </h2>
-            <time id="uploadtime" datetime="<?php echo $post['post_date']?>">
-              <span>Date: </span>
-              <?php echo $post['post_date']?>
-            </time>
-            <div id="category">Category: <a href="#"><?php echo $post["category"] ?></a></div>
-          </div><!-- post col-xs-6 col-lg-4 -->
-        <?php } ?>
-      </div><!-- row -->
-    </div><!-- container -->
-  </section>
-
-  </main>
-</body>
+      <input type="submit" name="submit" value="post" id="submitBtn">
+      <p><?php echo $error ?></p>
+    </div>
+  </form>
+</section>
+</main>
 </html>

@@ -1,0 +1,48 @@
+/**
+ * common stye
+*/
+/* simple reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* keep display scroll bar */
+html {
+    overflow-y: scroll;
+}
+body {
+    width: 100%;
+    max-width: 1900px;
+    height: 100%;
+    margin: 0 auto;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
+    color: #1f081b;
+    background-color: #ffc000;
+    background-image: url("../images/bgCat.gif");
+    background-repeat:no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+
+}
+h1 {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: dotted 5px #f34545;
+    font-family: 'Changa', sans-serif;
+    font-size: 45px;
+    color: #f34545;
+    text-shadow: 4px 4px 2px rgba(213, 170, 121, 1);
+}
+#wrapper {
+    margin: 3vw;
+}
+#directive {
+    margin: 10px 10vw;   
+    font-size: 120%;
+}

@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/blog.css">
+
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One|Permanent+Marker" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -32,7 +33,7 @@
 <script>
 </script>
 </head>
-<body id="post">
+<body id="blog">
 <header>
 	<nav class="mainNav">
 		<div class="drawer">
@@ -55,28 +56,61 @@
 	</nav><!-- mainNav -->
 </header>
 <main>
-<section class="mainContents">
-  <form method="post" action="post.php" enctype="multipart/form-data">
-      <h2>Add New Post</h2>
-      <p id="error"><?php echo $error ?></p>
-      <h3>Title</h3>
-      <p>
-        <input type="text" name="title" size="40" autofocus
-          value="<?php echo $title ?>">
-      </p>
-      <h3>Content</h3>
-      <p>
-        <textarea name="content" rows="8" cols="40">
-        <?php echo $content ?></textarea>
-      </p>
-      <p>
-        <input type="file" name="upfile">
-      </p>
-      <p>* Only JPG is allowed.</p>
-      <p class="submit">
-        <input type="submit" name="submit" id="submitBtn" value="post">
-      </p>
-  </form>
-  </section><!-- post -->
-</main>
+  <section class="mainContents">
+    <!-- arrow btnSection Top -->
+    <div class="btnSection">
+      <div class="basicBtn" id="prev">
+        <a href="./single.php?page=<?php echo($page - 1); ?>">&lt;&nbsp;Prev</a>
+      </div>
+      <div class="basicBtn" id="toTop">
+        <a href="./index.php">Back to Top</a>
+      </div>
+      <div class="basicBtn" id="next">
+        <a href="./single.php?page=<?php echo($page + 1); ?>">Next&nbsp;&gt;</a>
+      </div>
+    </div><!-- btnSection -->
+
+    <!-- <h1>Blog</h1> -->
+    <?php  foreach($posts as $post) { ?>
+      <div class="post">
+        <h2><?php echo $post['title'] ?></h2>
+        <time id="uploadtime" datetime="<?php echo $post['post_date']?>">
+          <span>Date: </span>
+          <?php echo $post['post_date']?>
+        </time>
+        <div id="category">Category: <a href="#"><?php echo $post["category"] ?></a></div>
+        <?php if($post['img_src']) { ?>
+          <div class="headerImg">
+            <img src=<?php echo $post['img_src'] ?>>
+          </div>
+        <?php } ?>
+        <div id="blogtext"><?php echo nl2br($post['content']) ?></div>
+        <?php foreach($post['comments'] as $comment) { ?>
+          <div class='comment'>
+            <h3><?php echo $comment['name'] ?></h3>
+            <p><?php echo nl2br($comment['content']) ?></p>
+          </div>
+        <?php } ?>
+        <p class="comment_link">
+          Post date: <?php echo $post['time'] ?>
+          <a href="comment.php?id=<?php echo $post['id'] ?>">Comment</a>
+        </p>
+      </div><!-- post -->
+      <?php } ?>
+      <!-- arrow Botton -->
+      <div class="btnSection">
+            <div class="basicBtn" id="prev">
+              <a href="./single.php?page=<?php echo($page - 1); ?>">&lt;&nbsp; Prev</a>
+            </div>
+            <div class="basicBtn" id="toTop">
+              <a href="./index.php">Back to Top</a>
+            </div>
+            <div class="basicBtn" id="next">
+              <a href="./single.php?page=<?php echo($page + 1); ?>">Next &nbsp;&gt;</a>
+          </div>
+      </div>
+    </section>
+
+  </main>
 </body>
+</html>
