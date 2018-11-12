@@ -35,6 +35,9 @@ h2:after {
   width: 10%;
 
 }
+h2:hover {
+  opacity: 0.8;
+}
 #category {
   margin: 10px 0;
   font-size: 110%;
@@ -107,6 +110,7 @@ h2:after {
   padding: 0;
   /* max-height: 90px; */
   height: 90px;
+  vertical-align: middle;
 }
 #blogTop .post h2 a {
   text-decoration: none;
@@ -163,23 +167,10 @@ h2:after {
   line-height: 150%;
   margin: 10px auto;
 } 
-.basicBtn {
-  /* display: inline-block; */
-  margin-right: 10px;
-  padding: 10px 50px;
-  height: 20px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  background: #642200;
-  border: 0;
-  font-size: 130%;
-}
+
+
 #prev {
   /* margin-right: 10px; */
-}
-.basicBtn a {
-  /* font-size: 130%; */
-  color: #fff;
 }
 #error {
   color: red;
@@ -194,29 +185,47 @@ h2:after {
     height: auto;
     /* padding: 0; */
     padding: 2% 5%;
-    margin-top: 100px;
+    margin-top: 150px;
   }
   #blog .mainContents {
     margin-top: 150px;   
   }
 }
-
-
-		/* for mobile */
-    @media screen and (max-width: 480px) {
-      .basicBtn {
-        padding: 5px 10px;
-        cursor: pointer;
-        letter-spacing: 2px;
-        background: #642200;
-        border: 0;
-        font-size: 90%;
-      }
-      #blogTop .post {
-        margin-top: 5px;
-      }
-      #blogTop .post h2 a {
-        font-size: 85%;
-      }
-
+/**
+* Comment
+*/
+.commentTitle {
+  font-size: 160%;
+}
+  /**
+  * for タブレット
+  * Show up Hamburger Menu (SCREEN < 768px)
+  */
+  @media screen and (max-width: 768px) {
+    .post .mainContents {
+      margin-top: 150px;
     }
+    .commentTitle {
+      font-size: 120%;
+    }
+  }
+		/* for mobile */
+  @media screen and (max-width: 480px) {
+    .basicBtn {
+      padding: 5px 10px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      background: #642200;
+      border: 0;
+      font-size: 90%;
+    }
+    #blogTop .post {
+      margin-top: 5px;
+    }
+    #blogTop .post h2 a {
+      font-size: 85%;
+    }
+    #post #submitBtn {
+      padding: 5px 20px;
+    }
+  }

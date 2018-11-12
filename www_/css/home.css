@@ -1,0 +1,78 @@
+.mainContents {
+	margin-top: 0;
+}
+.mainNav {
+	/* background-color: rgba(255, 255, 255, 0); */
+}
+/*only for top page */
+/**
+ * for Desktop PC
+ */
+	@media screen and (min-width: 768px) {
+		.mainNav {
+			/* display: flex; */
+			/* flex-direction: row; */
+		}
+		.navbar_toggle {
+			display: none;
+		}
+		.mainNav .menu {
+			width: 100%;
+			transform: translateX(0);
+			margin: auto;
+		}
+		.mainNav .menu ul {
+			height: 70px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			align-items: center;
+		}
+		.mainNav .menu ul li {
+			padding: 0 1em;
+			border-bottom: none;
+		}
+
+	}
+
+	@media screen and (max-width: 900px) {
+		.Chewy a {
+			font-size: 180%;
+		}	
+	}
+
+	
+	
+/**
+ * for タブレット
+ * Show up Hamburger Menu (SCREEN < 768px)
+ */
+	@media screen and (max-width: 768px) {
+		/* Hero Headerの上にmainNavを表示させる */
+		.wrap {
+			z-index: -1;
+		}
+		#slogan {
+			font-size: 250%;
+		}
+		/* タブレット・スマホではヒーロヘッダーのナビは非表示 */
+		#hContentNav {
+			display: none;
+		}
+		.mainNav {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 4;
+			width: 100%;
+			
+		}
+		
+	}
+		/* for mobile */
+	@media screen and (max-width: 480px) {
+		#slogan {
+			font-size: 180%;
+		}
+	}

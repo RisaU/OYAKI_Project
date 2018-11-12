@@ -3,7 +3,7 @@ require_once "dbCon.php";
     // connect to DB
     $mysqli = doDB();
 
-    $display_block = "<h1>My Categories</h1>
+    $display_block = "<h2>Categories</h2>
                         <div id='wrapper'>
                           <p id='directive'>Select a categroy to see its items.</p>";
 
@@ -65,17 +65,6 @@ require_once "dbCon.php";
     
     // close connection to MySQL
     mysqli_close($mysqli);
+
+    require_once 't_index.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Categories</title>
-    <link href="https://fonts.googleapis.com/css?family=Changa:700" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/seestore.css">
-</head>
-<body>
-    <a href="checkout.php">Checkout</a>
-    <?php echo $display_block; ?>
-</body>
-</html>

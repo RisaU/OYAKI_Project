@@ -1,0 +1,233 @@
+
+.error {
+    margin-bottom: 10px;
+    color: red;
+}
+/* .mainContents {
+    margin-top: 150px;
+} */
+/* 表示・非表示を切り替える */
+.hidden_box {
+    margin: 5vh 0;
+    padding: 0;
+}
+.hidden_box label {
+    padding: 3px;
+    font-weight: bold;
+    font-size: 130%;
+    cursor: pointer;
+    display: inline-block;
+}
+.hidden_box label::after {
+    display: block;
+    content: "";
+    width: 0;
+    transition: 0.3s;
+    border-bottom: 2px solid #1f081b;
+}
+.hidden_box label:hover::after {
+    width: 100%;
+}
+.hidden_box .desc {
+    margin: 10px;
+}
+.hidden_box input {
+   display: none;
+}
+.hidden_box .hidden_show {
+    list-style: none;
+    height: 0;
+    margin-left: 10px;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .8s;
+}
+/* show up when clicked */
+.hidden_box input:checked ~ .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+.hidden_show li {
+    margin: 10px 0;
+}
+.hidden_show li a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    line-height: 160%;
+}
+.hidden_show li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    transition: 0.3s;
+    border-bottom: 2px solid #1f081b;
+}
+.hidden_show li a:hover::after {
+    width: 100%;
+}
+.btnSection {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: flex-end;
+    text-align: center;
+    line-height: 150%;
+    margin: 20px auto;
+}
+.basicBtn {
+    padding: 10px;
+}
+/**
+* show cart page
+*/
+#cart {
+    margin-top: 3vw;
+    border: solid 1px #ccc;
+    padding: 0 30px 40px 30px;
+    /* margin-top: 20px; */
+    box-shadow: 2px 2px 4px grey;
+}
+table {
+    margin-top: 3vw;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+.tableItem {
+    width: 100%;
+    line-height: 4em;
+}
+th {
+    border-bottom: 1px solid black;
+    font-weight: normal;
+    color: #6f6f6f;
+    padding: 6px;
+    text-align: left;
+}
+td {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    padding: 6px;
+    vertical-align: top;
+    text-align: left;
+}
+.action {
+    text-align: center;
+}
+#totalTr {
+    background-color: #cccccc3b;
+}
+#total {
+    text-align: right;
+    font-weight: bold;
+    color: black;
+}
+#totalPrice {
+    text-align: center;
+}
+/**
+* Checkout page
+*/
+#checkout #total {
+    text-align: left;
+}
+#checkout #totalPrice {
+    text-align: left;
+}
+
+/* form */
+input, textarea {
+	border: 1px solid #000;
+}
+#checkout dl {
+	overflow: hidden;
+	width: 100%;
+}
+#checkout dl dt,
+#checkout dl dd {
+	font-size: 120%;	
+	margin: 0;
+	padding: 10px;
+	border-top: 1px dotted #ccc;
+	line-height: 2;
+}
+#checkout dl dt {
+	float: left;
+    clear: left;
+	width: 30%;
+}
+#checkout dl dt span {
+	color: red;
+	font-weight: bold;
+}
+#checkout dl dd {
+	float:left;
+	width: 65%;
+	word-wrap: break-word;
+}
+
+#checkout dl dd input[type="text"],
+#checkout dl dd input[type="email"]
+ {
+	padding: 1px 0;
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    -webkit-appearance: none;
+}
+#checkout .submit {
+    clear: both;
+    text-align: center;
+    margin-top: 30px;
+}
+#checkout .submit #checkoutBtn {
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding: 10px 100px;
+    background: #642200;
+    border: 0;
+    font-size: 130%;
+    color: #fff;
+}
+#checkout .submit #checkoutBtn:hover {
+    opacity: 0.8;
+}
+/**
+* checkout done page
+*/
+#checkout_done .mainContents {
+    margin-top: 150px;
+}
+#checkout_done h1 {
+    font-size: 200%;
+}
+#checkout_done #thaksImg {
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
+}
+
+	@media screen and (max-width: 890px) { 
+
+        #checkout dl dd {
+            width: 50%;
+        }
+    
+    }
+	/* for mobile */
+	@media screen and (max-width: 480px) { 
+
+        #checkout dl dd {
+            width: 40%;
+        }
+
+    
+    
+    
+    }

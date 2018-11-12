@@ -1,11 +1,17 @@
 <?php 
+if(!isset($_COOKIE['PHPSESSID'])) {
+
+    header("Location:error.php");
+    exit();
+  }
+
 require_once "dbCon.php";
     session_start();
 
     // connect to DB
     $mysqli = doDB();
 
-    $display_block = "<h1>Your Shopping Cart</h1>";
+    $display_block = "<h2>Shopping Cart</h2>";
 
     // check for cart items based on user session id
     $get_cart_sql = "SELECT st.id, si.item_title, si.item_price,
@@ -26,15 +32,14 @@ require_once "dbCon.php";
     } else {
         // get info and build cart display
         $display_block .= <<<END_OF_TEXT
+        <div id="cart">
         <table>
             <tr>
                 <th>Title</th>
-                <th>Size</th>
-                <th>Color</th>
                 <th>Price</th>
                 <th>Qty</th>
                 <th>Subtotal</th>
-                <th>Action</th>
+                <th class="action">Action</th>
             </tr>
 END_OF_TEXT;
         $totalPrice = 0;
@@ -43,33 +48,33 @@ END_OF_TEXT;
             $item_title = stripcslashes($cart_info['item_title']);
             $item_price = $cart_info['item_price'];
             $item_qty = $cart_info['sel_item_qty'];
-            $item_color = $cart_info['sel_item_color'];
-            $item_size = $cart_info['sel_item_size'];
             $subtotal_price = sprintf("%.02f", $item_price * $item_qty);
         
             $totalPrice += $subtotal_price;
 
             $display_block .= <<<END_OF_TEXT
-            <tr>
+            <tr class="tableItem">
                 <td>$item_title<br></td>
-                <td>$item_size<br></td>
-                <td>$item_color<br></td>
                 <td>\$ $item_price<br></td>
                 <td>$item_qty<br></td>
                 <td>\$ $subtotal_price<br></td>
-                <td><a href="removefromcart.php?id=$id">remove</a></td>       
+                <td class="action"><a href="removefromcart.php?id=$id">remove</a></td>       
             </tr>
 END_OF_TEXT;
         }
-        $display_block .= "<tr><th colspan=5>Total</th><td>\$ "
-                        . sprintf("%.02f", $totalPrice)."</td><td></td></tr>";
-        $display_block .= "</table>";
+        $display_block .= "<tr id='totalTr'><td colspan=3></td><th id='total'>Total</th><td id='totalPrice'>\$ "
+                        . sprintf("%.02f", $totalPrice)."</td></tr>";
+        $display_block .= "</table></div>";
     }
     if (mysqli_num_rows($get_cart_res) > 0) {
         $display_block .= <<<END_OF_TEXT
-        <div class="base">
-            <a href="index.php">Go back to shopping</a>　
-            <a href="checkout.php">Checkout</a>
+        <div class="btnSection">
+            <div class="basicBtn">
+                <a href="index.php">Go back to shopping</a>　
+            </div>
+            <div class="basicBtn">
+                <a href="checkout.php">Proceed to Checkout</a>
+            </div>
         </div>
 END_OF_TEXT;
     }
@@ -79,35 +84,6 @@ END_OF_TEXT;
 
     // close connection to DB
     mysqli_close($mysqli);
+
+    require_once "t_showcart.php";
 ?>
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title>My Store</title>
-
-<style>
-    table {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th {
-        border: 1px solid black;
-        padding: 6px;
-        font-weight: bold;
-        background: #ccc;
-        text-align: center;
-    }
-    td {
-        border: 1px solid black;
-        padding: 6px;
-        vertical-align: top;
-        text-align: center;
-    }
-</style>
-
-</head>
-<body>
-    <?php echo $display_block; ?>
-
-</body>
-</html>

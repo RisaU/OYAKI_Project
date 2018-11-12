@@ -4,6 +4,7 @@
     padding: 0;
     border: none;
 }
+
 /**
  * 基本設定
 */
@@ -414,6 +415,38 @@ footer address {
 	opacity: 1;
 	transform: translate(0, 0);
 }
+/**
+* Basic botton
+*/
+.basicBtn {
+	/* display: inline-block; */
+	margin-right: 10px;
+	padding: 10px 50px;
+	height: 20px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	border: 0;
+	font-size: 130%;
+	/* border: solid 1px #642200; */
+  }
+  .basicBtn a {
+	color: #642200;
+  }
+  .basicBtn a::after {
+	display: block;
+	content: "";
+	width: 0;
+	transition: 0.3s;
+	border-bottom: 2px solid #642200;
+  }
+  .basicBtn a:hover::after {
+	width: 100%;
+  }
+  .basicBtn a:hover {
+	opacity: 1;
+  }
+  
+
 
 /**
  * for Desktop PC

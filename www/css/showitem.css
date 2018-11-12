@@ -1,0 +1,53 @@
+html, body, main {
+	height:100%;
+}
+.mainContents, #wrapper {
+  height: 100%;
+}
+
+#breadcrumbs, #showItem {
+    margin: 10px 0;
+}
+#showItem {
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+}
+#showItem p {
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+}
+#showItem img {
+    box-shadow: 10px 10px 15px -10px;
+}
+#showItem #sel_item_qty {
+  border: solid 1px black;
+  padding: 0 3px;
+}
+.itemImage {
+  float: left;
+}
+.itemDetail {
+  float: left; 
+  padding-left: 25px;
+}
+
+button {
+  font-family: 'Do Hyeon', calibri, arial, sans-serif;
+}
+
+.basicBtn2 {
+    font-size: 110%;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 10px 10px;
+    color: #fff;
+    background: #642200;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    transition: .3s;
+}
+.basicBtn2:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+}
