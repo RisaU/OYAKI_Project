@@ -64,7 +64,7 @@
 <main>
 <section class="mainContents">
   <div class="base">
-
+    <?php if ($error) echo "<div class=\"error\">$error</div>" ?>
     <h2>Item list</h2>
     <table>
       <tr>
@@ -94,7 +94,6 @@
       </tr>
       </table>
     <h2>Payment infomation</h2>
-    <?php if ($error) echo "<div class=\"error\">$error</div>" ?>
     <form action="checkout.php" method="post" name="checkoutFomr">
       <dl>
         <dt>Name</dt>
@@ -128,7 +127,7 @@
                 <a href="index.php">Go back to shopping</a>　
             </div>
             <div class="basicBtn">
-                <!-- <a href="checkout.php">Proceed to Checkout</a> -->
+                <a href="checkout.php">Proceed to Checkout</a>
             </div>
         </div>
 </section>

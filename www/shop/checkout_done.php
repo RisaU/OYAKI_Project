@@ -1,6 +1,5 @@
 <?php
 require_once 'dbCon.php';
-session_start();
 $id = 1;
 
 if(@$_GET) {
@@ -14,11 +13,7 @@ $res = mysqli_query($db, $sql)
 
 
   $info = mysqli_fetch_assoc($res);
-
-  // close session
-  $_SESSION = array();
-  session_destroy();
-
+  
   require_once 't_checkout_done.php';
 
 ?>

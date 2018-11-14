@@ -6,13 +6,13 @@
  *  store_item_size
  *  store_item_color
  */
-DROP TABLE IF EXISTS store_categories;
+
 CREATE TABLE store_categories (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     cat_title VARCHAR(50) UNIQUE,
     cat_desc TEXT
 );
-DROP TABLE IF EXISTS store_items;
+
 CREATE TABLE store_items (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     cat_id INT NOT NULL,
@@ -22,7 +22,6 @@ CREATE TABLE store_items (
     item_image VARCHAR(50)
 );
 /* This is for management inventory*/
-DROP TABLE IF EXISTS store_item_stock;
 CREATE TABLE store_item_stock (
     item_id INT PRIMARY KEY,
     stock_qty INT NOT NULL,
@@ -113,7 +112,6 @@ INSERT INTO store_item_stock VALUES
 * session_id: identifies the user = PHP session ID
 * sel_item_qty: selected quantity of the item
 */
-DROP TABLE IF EXISTS store_shoppertrack;
 CREATE TABLE store_shoppertrack (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     session_id VARCHAR(32),
@@ -129,7 +127,6 @@ CREATE TABLE store_shoppertrack (
 *
 * EMUN型では文字列定数をリスト
 */
-DROP TABLE IF EXISTS store_orders;
 CREATE TABLE store_orders (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     order_date DATETIME,
@@ -149,7 +146,6 @@ CREATE TABLE store_orders (
 * ** TABLE **
 * store_orders_items 
 */
-DROP TABLE IF EXISTS store_orders_items;
 CREATE TABLE store_orders_items (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     order_id INT,

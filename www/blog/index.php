@@ -22,5 +22,4 @@ $categories = $db->select($sql);
 
 require_once 't_index.php';
 
-
 ?>

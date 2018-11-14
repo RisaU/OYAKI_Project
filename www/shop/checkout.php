@@ -151,8 +151,6 @@ if(@$_POST['submit']) {
     mysqli_close($db);
     // close session
     session_destroy();
-    setCookie( 'PHPSESSID' ); 
-    
     // require_once 't_checkout_done.php';
     header("Location:checkout_done.php?id=$orderId");
     exit();

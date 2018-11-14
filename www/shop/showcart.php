@@ -4,6 +4,8 @@ if(!isset($_COOKIE['PHPSESSID'])) {
     header("Location:error.php");
     exit();
   }
+  
+
 
 require_once "dbCon.php";
     session_start();

@@ -1,22 +1,23 @@
-$(function() {
-  $('[name=category]').on('change', function(){
+$(function () {
+  $('[name=category]').on('change', function () {
     var data = $(this).val();
-    console.log(data);
+    // console.log(data);
     $.ajax({
       //url: "./../blog/index.php",
-      url: "index.php",
-      type: "GET",
+      url: "ajax.php",
+      type: "POST",
       // dataType: "json",
       data: {
-        //category : $(this).val()
-        data : data
+        'category': data
       }
-      
+
     })
-    .done(function(data){
-      console.log("okay");
+    .done(function (data) {
+       console.log("okay");
+       //alert(data);
+       $('#articles').html(data);
     })
-    .fail(function(){
+    .fail(function () {
       console.log("fail");
     });
   });
