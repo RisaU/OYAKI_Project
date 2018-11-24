@@ -51,6 +51,7 @@
 				<li><a href="../underConstruction.html">MENU</a></li>
 				<li><a href="../contact.html">CONTACT</a></li>
 				<li><a href="./index.php">BLOG</a></li>
+        <li><a href="./../shop/">SHOP</a></li>
 			</ul>
 		</div><!-- menu -->
 	</nav><!-- mainNav -->

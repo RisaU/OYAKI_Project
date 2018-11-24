@@ -114,10 +114,7 @@ if(@$_POST['submit']) {
         or die(mysqli_error($db));
       
       // get order id
-      $sql = "SELECT id FROM store_orders WHERE order_date='" .$now . "' AND order_name='" .$name . "';";
-      $res = mysqli_query($db, $sql);
-      $tmp = mysqli_fetch_assoc($res);
-      $orderId = $tmp['id'];
+      $orderId = mysqli_insert_id($mysqli);
 
       // update sotck number
       foreach($items as $item) {

@@ -1,21 +1,32 @@
 <?php 
 require_once "./dbConnect.php";
 
+
+
 $error = $title = $content = '';
 $fileName = "";
 $imageDir = "images";
 $filePath = "";
+$category = 'blog';
+
+$db = new dbConnect();
+
+// get category list
+$sql = "SELECT category_name FROM category;";
+$categories = $db->select($sql);
 
 
 if (@$_POST['submit']) {
   if(!$_POST["title"]) $error .= "No title.<br>";
    
-   if(mb_strlen($_POST["title"]) > 80) {
+  if(mb_strlen($_POST["title"]) > 80) {
     $error .= "The title is too long. <br>";
   }
 
   if(!$_POST["content"]) $error .= "No content.<br>";
- 
+
+  if($_FILES['upfile']['error'] != 'UPLOAD_ERR_OK') $error .= "No image.<br>";
+
   // img file
   if (isset($_FILES['upfile']['error']) 
     && is_int($_FILES['upfile']['error']) 
@@ -53,12 +64,11 @@ if (@$_POST['submit']) {
   }
 
   if(!$error) {
-    $db = new dbConnect();
-
     //$title = mysqli_real_escape_string($db, $_POST["title"]);
     //$content = mysqli_real_escape_string($db, $_POST["content"]);
     $title = $_POST["title"];
     $content = $_POST["content"];
+    $category = $_POST['category'];
     
     // get current time 
     $now = new DateTime(); 
@@ -67,8 +77,7 @@ if (@$_POST['submit']) {
     $filePath = "./" . $imageDir . "/" . $fileName;
 
     $sql = "INSERT INTO post(title, content, category, img_src, post_date) 
-            VALUES ('" . $title . "', '". $content ."', 'blog', '"
-              . $filePath . "' , '" . $now . "');";
+            VALUES ('$title', '$content', '$category', '$filePath' , '$now');";
 
     $db->plural($sql);
 
@@ -81,6 +90,8 @@ if (@$_POST['submit']) {
     header("Location: index.php");
     exit();
   }
+} else {
+
 }
 
 require_once "t_post.php";

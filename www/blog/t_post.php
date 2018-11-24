@@ -50,6 +50,7 @@
 				<li><a href="../underConstruction.html">MENU</a></li>
 				<li><a href="../contact.html">CONTACT</a></li>
 				<li><a href="./index.php">BLOG</a></li>
+        <li><a href="./../shop/">SHOP</a></li>
 			</ul>
 		</div><!-- menu -->
 	</nav><!-- mainNav -->
@@ -59,6 +60,17 @@
   <form method="post" action="post.php" enctype="multipart/form-data">
       <h2>Add New Post</h2>
       <p id="error"><?php echo $error ?></p>
+      <div id="selectCategory">
+        <label for="category" id="categoryLavel">Category:</label>
+        <select name="category" class="selectItem">
+          <!-- <option value="all">All</option> -->
+          <?php foreach($categories as $category) { ?>
+          <option value="<?php echo $category['category_name']; ?>">
+            <?php echo $category['category_name']; ?>
+          </option>
+          <?php } ?>
+        </select>
+      </div><!-- category -->
       <h3>Title</h3>
       <p>
         <input type="text" name="title" size="40" autofocus
@@ -66,8 +78,7 @@
       </p>
       <h3>Content</h3>
       <p>
-        <textarea name="content" rows="8" cols="40">
-        <?php echo $content ?></textarea>
+        <textarea name="content" rows="8" cols="40"><?php echo $content ?></textarea>
       </p>
       <p>
         <input type="file" name="upfile">

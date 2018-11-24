@@ -47,3 +47,16 @@ INSERT INTO comment(id, post_id, name, content) VALUES
 (1, 1, 'Taro', 'This is a comment for article 1'),
 (2, 1, 'Hanako', 'This is a comment for article 1')
 ;
+
+
+/* Category */
+DROP TABLE IF EXISTS category;
+CREATE TABLE IF NOT EXISTS category(
+    id INT PRIMARY KEY,
+    category_name varchar(100)
+);
+
+
+INSERT INTO category VALUES 
+(1, 'blog'),
+(2, 'news');
